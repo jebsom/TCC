@@ -1,0 +1,41 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 29/10/2020, 19:52:41
+    Author     : joaomg
+*/
+
+/*#frmcontatoazul{
+    padding:18px;
+    width:680px
+}*/
+
+#frmcontatoazul fieldset{
+    border:1px double #20a;    
+    padding:10px;
+    
+}
+
+#frmcontatoazul fieldset .form-group{
+    color:#30a;
+}
+
+#frmcontatoazul fieldset legend{
+    background-color:#20a;
+    color:#ffe;
+/*    padding:10px;    
+    margin:4px;*/
+    margin-bottom:20px;
+    border-radius:8px;
+}
+
+#frmcontatoazul #singlebutton{
+    margin-top:20pt;
+}
+
+#frmcontatoazul .help-block{
+    display:none;
+}
