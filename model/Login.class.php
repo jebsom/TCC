@@ -64,7 +64,7 @@ Class Login extends Conex {
     static function logoff() {
         unset($_SESSION['CLI']);
         echo '<h4 class="alert alert-danger">Encerrando a sessão...</h4>';
-        Rotas::redirecionar(2, Rotas::get_home());
+        Rotas::redirecionar(2, Rotas::pag_cliente_login());
     }
 
     static function acessoNegado() {
