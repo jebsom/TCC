@@ -32,7 +32,7 @@
 
                 <div class="form-group"> 
 
-                    <button class="btn btn-geral btn-block btn-lg"><i class="glyphicon glyphicon-log-in"></i> Entrar </button>
+                    <button class="btn btn-success btn-block btn-lg"><i class="glyphicon glyphicon-log-in"></i> Entrar </button>
 
                 </div>
                 <div class="form-group"> 

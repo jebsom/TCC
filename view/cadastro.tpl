@@ -1,82 +1,102 @@
-<form method="post" action="cadastro">
-    <div class="form-row">
-        <legend  class="w-auto">Dados Pessoais</legend>
-        <div class="col-md-4">
-            <label for="cli_nome">Nome</label>
-            <input type="text" class="form-control" id="cli_nome" name="cli_nome" placeholder=" ">
-        </div>
-        <div class="col-md-4">
-            <label for="cli_sobrenome">Sobrenome</label>
-            <input type="text" class="form-control" id="cli_sobrenome" name="cli_sobrenome"  placeholder=" ">
-        </div>
-        <div class="col-md-4">
-            <label for="cli_data_nasc">Data Nascimento</label>
-            <input type="date" class="form-control" id="cli_data_nasc" name="cli_data_nasc"  >
-        </div>
-    </div>
-    <div class="form-row">
-        <div class="col-md-3">
-            <label for="cli_rg">RG</label>
-            <input type="text" class="form-control" id="cli_rg" name="cli_rg" placeholder="">
-        </div>
-        <div class="col-md-3">
-            <label for="cli_cpf">CPF</label>
-            <input type="text" class="form-control" id="cli_cpf" name="cli_cpf"  placeholder="">
-        </div>
-        <div class="col-md-1">
-            <label for="cli_ddd">DDD</label>
-            <input type="text" class="form-control" id="cli_ddd" name="cli_ddd"  placeholder="">
-        </div>
-        <div class="col-md-2">
-            <label for="cli_fone">Fone</label>
-            <input type="text" class="form-control" id="cli_fone" name="cli_fone"  placeholder="">
-        </div>
-        <div class="col-md-3">
-            <label for="cli_celular">Celular</label>
-            <input type="text" class="form-control" id="cli_celular" name="cli_celular" aplaceholder=" ">
-        </div>
-    </div>
-    <div class="form-row">
-        <legend  class="w-auto">Endereços</legend>
-        <div class="col-md-5">
-            <label for="cli_endereco">Rua/Logradouro</label>
-            <input type="text" class="form-control" id="cli_endereco" name="cli_endereco"  placeholder=" ">
-        </div>
-        <div class="col-md-2">
-            <label for="cli_numero">Nº</label>
-            <input type="text" class="form-control" id="cli_numero" name="cli_numero"  placeholder=" ">
-        </div>
-        <div class="col-md-5">
-            <label for="cli_bairro">Bairro</label>
-            <input type="text" class="form-control" id="cli_bairro" name="cli_bairro"  placeholder=" ">
-        </div>
-    </div>
-    <div class="form-row">
-        <div class="col-md-5">
-            <label for="cli_cidade">Cidade</label>
-            <input type="text" class="form-control" id="cli_cidade" name="cli_cidade"  placeholder=" ">
-        </div>
-        <div class="col-md-2">
-            <label for="cli_uf">UF</label>
-            <input type="text" class="form-control" id="cli_uf" name="cli_uf"  placeholder=" ">
-        </div>
-        <div class="col-md-5">
-            <label for="cli_cep">CEP</label>
-            <input type="text" class="form-control" id="cli_cep" name="cli_cep"  placeholder=" ">
-        </div>
-    </div>
-    <div class="form-row">
-        <legend class="w-auto">Informações para conta</legend>
-        <div class="col-md-6">
-            <label for="cli_email">E-mail</label>
-            <input type="text" class="form-control" id="cli_email" name="cli_email"  placeholder=" ">
-        </div>
-        <div class="col-md-6">
-            <label for="cli_senha">Senha</label>
-            <input type="text" class="form-control" id="cli_senha" name="cli_senha"  placeholder=" ">
-        </div>
-    </div>
+<h3>Cadastro de cliente</h3>
+<!--- dados do cadastro -->
 
-    <button type="submit" class="btn btn-primary  btn-block">Enviar</button>
+<hr>
+
+<form name="cadcliente" id="cadcliente" method="post" action="cadastro">
+
+    <section class="row" id="cadastro">
+
+        <div class="col-md-4">
+            <label>Nome:</label>
+            <input type="text" id="cli_nome" name="cli_nome" class="form-control" minlength="3" required>
+        </div>
+
+        <div class="col-md-4">
+            <label>Sobrenome:</label>
+            <input type="text" name="cli_sobrenome" id="cli_sobrenome" class="form-control"  minlength="3" required>
+        </div>
+
+        <div class="col-md-3">
+            <label>Data Nasc:</label>
+            <input type="date" name="cli_data_nasc" id="cli_data_nasc" class="form-control" required>
+        </div>
+
+        <div class="col-md-2">
+            <label>RG:</label>
+            <input type="text" name="cli_rg" id="cli_rg"  class="form-control" required>
+        </div>
+
+        <div class="col-md-2">
+            <label>CPF:</label>
+            <input type="text" name="cli_cpf"  id="cli_cpf" class="form-control" minlength="11" maxlength="11" required>
+        </div>
+
+        <div class="col-md-2">
+            <label>DDD:</label>
+            <input type="number" name="cli_ddd" class="form-control"  minlength="2" maxlength="2" required>
+        </div>
+
+        <div class="col-md-3">
+            <label>Fone:</label>
+            <input type="number" name="cli_fone" class="form-control" required>
+        </div>
+
+        <div class="col-md-3">
+            <label>Celular:</label>
+            <input type="number" name="cli_celular" class="form-control" required>
+        </div>
+
+        <div class="col-md-6">
+            <label>Endereço:</label>
+            <input type="text" name="cli_endereco" class="form-control"  minlength="3" required>
+        </div>
+
+        <div class="col-md-2">
+            <label>Numero:</label>
+            <input type="text" name="cli_numero" class="form-control" required>
+        </div>
+
+        <div class="col-md-4">
+            <label>Bairro:</label>
+            <input type="text" name="cli_bairro" class="form-control" minlength="3" required>
+        </div>
+
+        <div class="col-md-4">
+            <label>Cidade:</label>
+            <input type="text" name="cli_cidade" class="form-control" minlength="3" required>
+        </div>
+
+        <div class="col-md-2">
+            <label>UF:</label>
+            <input type="text" name="cli_uf" class="form-control" maxlength="2" minlength="2" required>
+        </div>
+
+        <div class="col-md-2">
+            <label>Cep:</label>
+            <input type="text" name="cli_cep" class="form-control" minlength="8" maxlength="8" required>
+        </div>
+
+        <div class="col-md-4">
+            <label>Email:</label>
+            <input type="email" name="cli_email" class="form-control" required>
+        </div>
+
+    </section>
+    <br>
+    <br>
+    <section class="row" id="btngravar">
+
+        <div class="col-md-4"></div>
+
+        <div class="col-md-4">
+            <button type="submit" class="btn btn-success btn-block "> <i class="glyphicon glyphicon-ok"></i> Gravar </button>
+        </div>
+
+        <div class="col-md-4"></div>
+
+
+    </section>
+
 
 </form>

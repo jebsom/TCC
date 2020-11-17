@@ -93,14 +93,12 @@ Class Login extends Conex {
         }
     }
 
-    private
-            function setUser($user) {
+    private function setUser($user) {
         $this->user = $user;
     }
 
-    private
-            function setSenha($senha) {
-        $this->senha = /* Sistemas::Criptografia( */$senha;
+    private function setSenha($senha) {
+        $this->senha = md5($senha);
     }
 
     function getUser() {

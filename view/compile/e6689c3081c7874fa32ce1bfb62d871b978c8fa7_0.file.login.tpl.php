@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.36, created on 2020-11-13 05:31:30
+/* Smarty version 3.1.36, created on 2020-11-17 04:30:09
   from 'D:\XAMPP\htdocs\TCC\view\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.36',
-  'unifunc' => 'content_5fae0c22ec8722_09784730',
+  'unifunc' => 'content_5fb343c1ec61b4_18220280',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e6689c3081c7874fa32ce1bfb62d871b978c8fa7' => 
     array (
       0 => 'D:\\XAMPP\\htdocs\\TCC\\view\\login.tpl',
-      1 => 1605240721,
+      1 => 1605580760,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fae0c22ec8722_09784730 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fb343c1ec61b4_18220280 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['LOGADO']->value == true) {?>
 
 
@@ -51,7 +51,7 @@ if ($_smarty_tpl->tpl_vars['LOGADO']->value == true) {?>
 
                 <div class="form-group"> 
 
-                    <button class="btn btn-geral btn-block btn-lg"><i class="glyphicon glyphicon-log-in"></i> Entrar </button>
+                    <button class="btn btn-success btn-block btn-lg"><i class="glyphicon glyphicon-log-in"></i> Entrar </button>
 
                 </div>
                 <div class="form-group"> 
