@@ -1,8 +1,8 @@
-
+<br>
 <section class="row" id="pedidos">
 
-
     <h4 class="text-center">Meus Pedidos</h4>
+    <br>
     <center>
         {if $QTD_PEDIDOS >0}
             <table class="table table-bordered" style="width: 90%">
@@ -23,7 +23,6 @@
                         <td style="width: 10%">{$P.ped_hora}</td>
                         <td style="width: 10%">{$P.ped_refer}</td>
 
-
                         {if $P.ped_pgto_status == 'NAO'} 
                             <td style="width: 15%"><span class="label label-danger">{$P.ped_pgto_status}</span></td>
                             {elseif $P.ped_pgto_status == 'Pago'}
@@ -33,10 +32,8 @@
                         {/if}
 
                     <form name="itens" method="post" action="{$PAG_ITENS}">
-
                         <input type="hidden" name="ped_cod" id="ped_cod" value="{$P.ped_cod}">
                         <td style="width: 10%"><button class="btn btn-default"><i class="glyphicon glyphicon-menu-hamburger"></i> Detalhes</button></td>
-
                     </form>    
 
                     </tr>

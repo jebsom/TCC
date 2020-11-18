@@ -3,12 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< Updated upstream
             <file>file:/D:/XAMPP/htdocs/TCC/controller/clientes_senha.php</file>
             <file>file:/D:/XAMPP/htdocs/TCC/view/clientes_senha.tpl</file>
             <file>file:/D:/XAMPP/htdocs/TCC/controller/cadastro.php</file>
             <file>file:/D:/XAMPP/htdocs/TCC/model/Login.class.php</file>
             <file>file:/D:/XAMPP/htdocs/TCC/model/Clientes.class.php</file>
             <file>file:/D:/XAMPP/htdocs/TCC/view/email_cliente_cadastro.tpl</file>
+=======
+            <file>file:/C:/xampp/htdocs/TCC/controller/clientes_senha.php</file>
+            <file>file:/C:/xampp/htdocs/TCC/controller/clientes_dados.php</file>
+            <file>file:/C:/xampp/htdocs/TCC/controller/cadastro.php</file>
+            <file>file:/C:/xampp/htdocs/TCC/view/clientes_dados.tpl</file>
+>>>>>>> Stashed changes
         </group>
     </open-files>
 </project-private>

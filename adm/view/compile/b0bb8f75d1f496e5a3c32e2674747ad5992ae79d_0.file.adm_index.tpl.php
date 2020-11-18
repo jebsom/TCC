@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.36, created on 2020-11-18 14:15:57
-  from 'C:\xampp\htdocs\TCC\view\index.tpl' */
+/* Smarty version 3.1.36, created on 2020-11-18 15:25:45
+  from 'C:\xampp\htdocs\TCC\adm\view\adm_index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.36',
-  'unifunc' => 'content_5fb556cd258193_26229858',
+  'unifunc' => 'content_5fb5672959eac2_76544592',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '95caa3c33389ca6541cec413041aa824ed9da6c7' => 
+    'b0bb8f75d1f496e5a3c32e2674747ad5992ae79d' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\TCC\\view\\index.tpl',
-      1 => 1605719754,
+      0 => 'C:\\xampp\\htdocs\\TCC\\adm\\view\\adm_index.tpl',
+      1 => 1605723939,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fb556cd258193_26229858 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fb5672959eac2_76544592 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
     <head>
@@ -100,16 +100,16 @@ function content_5fb556cd258193_26229858 (Smarty_Internal_Template $_smarty_tpl)
                         </div>
                         <div class="collapse navbar-collapse" id="navbar">
                             <ul class="nav navbar-nav">
-                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['GET_HOME']->value;?>
+                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['GET_HOME_ADM']->value;?>
 "><i class="glyphicon glyphicon-home"></i> Home </a> </li>
-                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['PAG_PRODUTOS']->value;?>
-"><i class="glyphicon glyphicon-tag"></i> Produtos</a> </li>
-                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['PAG_CONTA']->value;?>
-"><i class="glyphicon glyphicon-user"></i> Minha Conta </a> </li>
-                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['PAG_CARRINHO']->value;?>
-"><i class="glyphicon glyphicon-shopping-cart"></i> Carrinho </a> </li>
-                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['PAG_CONTATO']->value;?>
-" ><i class="glyphicon glyphicon-envelope"></i> Contato </a> </li>
+                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['PAG_CATEGORIAS_ADM']->value;?>
+"><i class="glyphicon glyphicon-tag"></i> Categorias</a> </li>
+                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['PAG_PRODUTOS_ADM']->value;?>
+"><i class="glyphicon glyphicon-user"></i> Produtos</a> </li>
+                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['PAG_CLIENTES_ADM']->value;?>
+"><i class="glyphicon glyphicon-shopping-cart"></i> Clientes </a> </li>
+                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['PAG_PEDIDOS_ADM']->value;?>
+" ><i class="glyphicon glyphicon-envelope"></i> Pedidos </a> </li>
                             </ul>
                             <form class="navbar-form navbar-right" role="search">
                                 <div class="form-group">
