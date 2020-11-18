@@ -9,6 +9,7 @@ Class Rotas {
     public static $pag;
     private static $pasta_controller = 'controller';
     private static $pasta_view = 'view';
+    private static $pasta_adm = 'adm';
 
     static function get_home() {
         return Config::SITE_URL . '/' . Config::SITE_PASTA;
@@ -129,8 +130,52 @@ Class Rotas {
     }
 
     static function redirecionar($tempo, $pagina) {
-        $url = '<meta http-equiv="refresh" content="' . $tempo . '; url=' . $pagina . '" >';
+        $url = '<meta http-equiv = "refresh" content = "' . $tempo . '; url=' . $pagina . '" >';
         echo $url;
+    }
+
+    static function get_home_adm() {
+        return self::get_home() . '/' . self::$pasta_adm;
+    }
+
+    static function pag_clientes_adm() {
+        return self::get_home_adm() . '/adm_clientes';
+    }
+
+    static function pag_clientesEdit_adm() {
+        return self::get_home_adm() . '/adm_clientes_edit';
+    }
+
+    static function pag_pedidos_adm() {
+        return self::get_home_adm() . '/adm_pedidos';
+    }
+
+    static function pag_categorias_adm() {
+        return self::get_home_adm() . '/adm_categorias';
+    }
+
+    static function pag_itens_adm() {
+        return self::get_home_adm() . '/adm_itens';
+    }
+
+    static function pag_produtos_adm() {
+        return self::get_home_adm() . '/adm_produtos';
+    }
+
+    static function pag_produtosAdd_adm() {
+        return self::get_home_adm() . '/adm_produtos_add';
+    }
+
+    static function pag_produtosEdit_adm() {
+        return self::get_home_adm() . '/adm_produtos_edit';
+    }
+
+    static function pag_produtosDel_adm() {
+        return self::get_home_adm() . '/adm_produtos_del';
+    }
+
+    static function pag_produtosImg_adm() {
+        return self::get_home_adm() . '/adm_produtos_img';
     }
 
 }

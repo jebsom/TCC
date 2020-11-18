@@ -57,11 +57,11 @@
                         </div>
                         <div class="collapse navbar-collapse" id="navbar">
                             <ul class="nav navbar-nav">
-                                <li><a href="{$GET_HOME}"><i class="glyphicon glyphicon-home"></i> Home </a> </li>
-                                <li><a href="{$PAG_PRODUTOS}"><i class="glyphicon glyphicon-tag"></i> Produtos</a> </li>
-                                <li><a href="{$PAG_CONTA}"><i class="glyphicon glyphicon-user"></i> Minha Conta </a> </li>
-                                <li><a href="{$PAG_CARRINHO}"><i class="glyphicon glyphicon-shopping-cart"></i> Carrinho </a> </li>
-                                <li><a href="{$PAG_CONTATO}" ><i class="glyphicon glyphicon-envelope"></i> Contato </a> </li>
+                                <li><a href="{$GET_HOME_ADM}"><i class="glyphicon glyphicon-home"></i> Home </a> </li>
+                                <li><a href="{$PAG_CATEGORIAS_ADM}"><i class="glyphicon glyphicon-tag"></i> Categorias</a> </li>
+                                <li><a href="{$PAG_PRODUTOS_ADM}"><i class="glyphicon glyphicon-user"></i> Produtos</a> </li>
+                                <li><a href="{$PAG_CLIENTES_ADM}"><i class="glyphicon glyphicon-shopping-cart"></i> Clientes </a> </li>
+                                <li><a href="{$PAG_PEDIDOS_ADM}" ><i class="glyphicon glyphicon-envelope"></i> Pedidos </a> </li>
                             </ul>
                             <form class="navbar-form navbar-right" role="search">
                                 <div class="form-group">
