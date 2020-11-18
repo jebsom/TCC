@@ -78,7 +78,7 @@
 
         <div class="col-md-4">
             <label>Email:</label>
-            <input type="email" value="{$CLI_EMAIL}" name="cli_email" class="form-control" readonly>
+            <input type="email" value="{$CLI_EMAIL}" name="cli_email" class="form-control" required>
         </div>
 
     </section>

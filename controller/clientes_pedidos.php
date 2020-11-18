@@ -9,6 +9,7 @@ $pedidos = new Pedidos();
 $pedidos->getPedidosCliente($_SESSION['CLI']['cli_id']);
 //var_dump($_SESSION['CLI']['cli_id']);
 
+$smarty->assign('QTD_PEDIDOS', $pedidos->TotalDados());
 $smarty->assign('PEDIDOS', $pedidos->getItens());
 $smarty->assign('PAG_ITENS', Rotas::pag_clientes_itens());
 

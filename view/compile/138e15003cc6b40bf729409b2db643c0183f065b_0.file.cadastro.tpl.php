@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.36, created on 2020-11-17 02:55:27
+/* Smarty version 3.1.36, created on 2020-11-18 03:51:31
   from 'D:\XAMPP\htdocs\TCC\view\cadastro.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.36',
-  'unifunc' => 'content_5fb32d8fe79922_21060740',
+  'unifunc' => 'content_5fb48c33ca3e09_02772946',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '138e15003cc6b40bf729409b2db643c0183f065b' => 
     array (
       0 => 'D:\\XAMPP\\htdocs\\TCC\\view\\cadastro.tpl',
-      1 => 1605570039,
+      1 => 1605643418,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fb32d8fe79922_21060740 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fb48c33ca3e09_02772946 (Smarty_Internal_Template $_smarty_tpl) {
 ?><h3>Cadastro de cliente</h3>
 <!--- dados do cadastro -->
 

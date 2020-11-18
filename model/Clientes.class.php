@@ -76,6 +76,60 @@ Class Clientes extends Conex {
         $this->ExecuteSQL($query, $params);
     }
 
+    function editarCliente($id) {
+
+        if ($this->GetClienteCPF($this->getCli_cpf()) > 0 && $this->getCli_cpf() != $_SESSION['CLI']['cli_cpf']) {
+            echo '<div class="alert alert-danger " id="erro_mostrar"> Este CPF já está cadastrado ';
+            Sistema::VoltarPagina();
+            echo '</div>';
+            exit();
+        }
+
+        if ($this->GetClienteEmail($this->getCli_email()) > 0 && $this->getCli_email() != $_SESSION['CLI']['cli_email']) {
+            echo '<div class="alert alert-danger " id="erro_mostrar"> Este Email já esta cadastrado ';
+            Sistema::VoltarPagina();
+            echo '</div>';
+            exit();
+        }
+
+        $query = " UPDATE {$this->prefix}clientes SET cli_nome=:cli_nome, cli_sobrenome=:cli_sobrenome,cli_data_nasc=:cli_data_nasc,cli_rg=:cli_rg, ";
+        $query .= " cli_cpf=:cli_cpf, cli_ddd=:cli_ddd,cli_fone=:cli_fone,cli_celular=:cli_celular ,cli_endereco=:cli_endereco ,cli_numero=:cli_numero,cli_bairro=:cli_bairro, ";
+        $query .= " cli_cidade=:cli_cidade ,cli_uf=:cli_uf ,cli_cep=:cli_cep ,cli_email=:cli_email ,cli_data_cad=:cli_data_cad, cli_hora_cad=:cli_hora_cad, cli_pwd=:cli_senha ";
+        $query .= " WHERE  cli_id = :cli_id";
+        //  $query .=" (:cli_nome, :cli_sobrenome,:cli_data_nasc,:cli_rg,";
+        //  $query .=" :cli_cpf, :cli_ddd,:cli_fone,:cli_celular ,:cli_endereco ,:cli_numero,:cli_bairro ,";
+        //  $query .=" :cli_cidade ,:cli_uf ,:cli_cep ,:cli_email ,:cli_data_cad, :cli_hora_cad, :cli_senha)";  
+
+        $params = array(
+            ':cli_nome' => $this->getCli_nome(),
+            ':cli_sobrenome' => $this->getCli_sobrenome(),
+            ':cli_data_nasc' => $this->getCli_data_nasc(),
+            ':cli_rg' => $this->getCli_rg(),
+            ':cli_cpf' => $this->getCli_cpf(),
+            ':cli_ddd' => $this->getCli_ddd(),
+            ':cli_fone' => $this->getCli_fone(),
+            ':cli_celular' => $this->getCli_celular(),
+            ':cli_endereco' => $this->getCli_endereco(),
+            ':cli_numero' => $this->getCli_numero(),
+            ':cli_bairro' => $this->getCli_bairro(),
+            ':cli_cidade' => $this->getCli_cidade(),
+            ':cli_uf' => $this->getCli_uf(),
+            ':cli_cep' => $this->getCli_cep(),
+            ':cli_email' => $this->getCli_email(),
+            ':cli_data_cad' => $this->getCli_data_cad(),
+            ':cli_hora_cad' => $this->getCli_hora_cad(),
+            ':cli_senha' => $this->getCli_senha(),
+            ':cli_id' => (int) $id
+        );
+
+        echo $query;
+        if ($this->ExecuteSQL($query, $params)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     function getClienteCPF($cpf) {
         $query = "SELECT * FROM  {$this->prefix}clientes WHERE cli_cpf = :cpf ";
 

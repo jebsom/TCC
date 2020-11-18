@@ -50,6 +50,7 @@ Class Login extends Conex {
 //            echo "</pre>";
         } else {
 //            echo "login not ok.";
+            echo '<script> alert ("E-mail ou senha incorreta! ");</script>';
         }
     }
 

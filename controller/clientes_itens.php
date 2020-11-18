@@ -9,14 +9,14 @@ if (!isset($_POST['ped_cod'])) {
     exit;
 }
 
-$itens = new ItensPedido();
+$itens = new Itens();
 
 $pedido = filter_var($_POST['ped_cod'], FILTER_SANITIZE_STRING);
 
 $itens->getItensPedido($pedido);
 
 $smarty->assign('ITENS', $itens->getItens());
-$smarty->assign('TOTAL', $itens->getTotal());
+$smarty->assign('TOTAL', $itens->getValorTotal());
 
 
 $smarty->display('clientes_itens.tpl');

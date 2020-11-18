@@ -1,8 +1,85 @@
-<?php
-clientes itens
-/* 
-* To change this license header, choose License Headers in Project Properties.
-* To change this template file, choose Tools | Templates
-* and open the template in the editor.
-*/
+<h4 class="text-center">Dados do pedido</h4>
 
+<section class="row">
+
+    <center>
+
+        <table class="table table-bordered" style="width: 80%">
+            <tr class="bg-success">
+                <td><b>Data:</b> {$ITENS.1.ped_data}</td>
+                <td><b>Hora:</b> {$ITENS.1.ped_hora}</td>
+                <td><b>Ref:</b> {$ITENS.1.ped_refer}</td>
+                <td><b>Status:</b> {$ITENS.1.ped_pgto_status}</td>
+            </tr>  
+        </table>
+
+    </center>
+
+</section>
+
+
+<section class="row" id="listaitens">
+
+    <center>
+
+        <table class="table table-bordered" style="width: 80%">
+            <tr class="text-success bg-success">
+                <td></td>
+                <td>Item</td>
+                <td>Valor Uni</td>
+                <td>X</td>
+                <td>Sub</td>
+            </tr>
+
+            {foreach from=$ITENS item=P}
+                <tr>
+
+                    <td><img src="{$P.item_img}" alt=""> </td>
+                    <td> {$P.item_nome}</td>
+                    <td class="text-right"> {$P.item_valor}</td>
+                    <td class="text-center"> {$P.item_qtd}</td>
+                    <td class="text-right"> {$P.item_sub}</td>
+
+                </tr>
+            {/foreach}
+
+        </table>
+
+    </center>
+
+</section>
+
+
+<section class="row" id="resumo">
+
+    <center>
+
+        <table class="table table-bordered" style="width: 80%">
+            <tr>
+                <td class="text-danger"> <b>Frete:</b> {$ITENS.1.ped_frete_valor}</td>
+                <td class="text-danger"> <b>Total:</b> {$TOTAL}</td>
+                <td class="text-danger"> <b>Final:</b> {$ITENS.1.ped_frete_valor+$TOTAL}</td>
+            </tr>  
+        </table>
+
+</section>  
+
+
+{if $ITENS.1.ped_pgto_status =='NAO'}          
+    <!--  modos de pagamento e outras informações --> 
+    <section class="row">
+        <h3 class="text-center"> Formas de pagamento </h3>     
+
+        <div class="col-md-4"></div>
+
+        <div class="col-md-4">
+
+            BOTÃO DE PAGAMENTO
+            <img src="{$TEMA}/images/logo-pagseguro.png"  alt=""> 
+            <script type="text/javascript" src=""></script>
+
+        </div>
+        <div class="col-md-4"></div>
+
+    </section>
+{/if}

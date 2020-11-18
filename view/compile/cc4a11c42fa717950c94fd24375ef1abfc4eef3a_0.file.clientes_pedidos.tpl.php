@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.36, created on 2020-11-13 05:06:06
+/* Smarty version 3.1.36, created on 2020-11-18 00:08:16
   from 'D:\XAMPP\htdocs\TCC\view\clientes_pedidos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.36',
-  'unifunc' => 'content_5fae062e8a1bb3_59794735',
+  'unifunc' => 'content_5fb49020760e53_58119645',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cc4a11c42fa717950c94fd24375ef1abfc4eef3a' => 
     array (
       0 => 'D:\\XAMPP\\htdocs\\TCC\\view\\clientes_pedidos.tpl',
-      1 => 1605239562,
+      1 => 1605668894,
       2 => 'file',
     ),
   ),
@@ -20,67 +20,70 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fae062e8a1bb3_59794735 (Smarty_Internal_Template $_smarty_tpl) {
-?><h3>Meus Pedidos</h3>
-
+function content_5fb49020760e53_58119645 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <section class="row" id="pedidos">
 
+
     <h4 class="text-center">Meus Pedidos</h4>
-
     <center>
-        <table class="table table-bordered" style="width: 90%">
+        <?php if ($_smarty_tpl->tpl_vars['QTD_PEDIDOS']->value > 0) {?>
+            <table class="table table-bordered" style="width: 90%">
 
-            <tr class="text-danger bg-danger">
-                <td>Data</td>
-                <td>Hora</td>
-                <td>Ref</td>
+                <tr class="text-danger bg-danger">
+                    <td>Data</td>
+                    <td>Hora</td>
+                    <td>Ref</td>
 
-                <td>Status</td>
-                <td></td>
-            </tr>
+                    <td>Status</td>
+                    <td></td>
+                </tr>
 
-            <?php
+                <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['PEDIDOS']->value, 'P');
 $_smarty_tpl->tpl_vars['P']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['P']->value) {
 $_smarty_tpl->tpl_vars['P']->do_else = false;
 ?>
-                <tr>
+                    <tr>
 
-                    <td style="width: 10%"><?php echo $_smarty_tpl->tpl_vars['P']->value['ped_data'];?>
+                        <td style="width: 10%"><?php echo $_smarty_tpl->tpl_vars['P']->value['ped_data'];?>
 </td>
-                    <td style="width: 10%"><?php echo $_smarty_tpl->tpl_vars['P']->value['ped_hora'];?>
+                        <td style="width: 10%"><?php echo $_smarty_tpl->tpl_vars['P']->value['ped_hora'];?>
 </td>
-                    <td style="width: 10%"><?php echo $_smarty_tpl->tpl_vars['P']->value['ped_refer'];?>
+                        <td style="width: 10%"><?php echo $_smarty_tpl->tpl_vars['P']->value['ped_refer'];?>
 </td>
 
 
-                    <?php if ($_smarty_tpl->tpl_vars['P']->value['ped_pgto_status'] == 'NAO') {?> 
-                        <td style="width: 15%"><span class="label label-danger"><?php echo $_smarty_tpl->tpl_vars['P']->value['ped_pgto_status'];?>
+                        <?php if ($_smarty_tpl->tpl_vars['P']->value['ped_pgto_status'] == 'NAO') {?> 
+                            <td style="width: 15%"><span class="label label-danger"><?php echo $_smarty_tpl->tpl_vars['P']->value['ped_pgto_status'];?>
 </span></td>
-                        <?php } elseif ($_smarty_tpl->tpl_vars['P']->value['ped_pgto_status'] == 'Pago') {?>
-                        <td style="width: 15%"><span class="label label-success"><?php echo $_smarty_tpl->tpl_vars['P']->value['ped_pgto_status'];?>
+                            <?php } elseif ($_smarty_tpl->tpl_vars['P']->value['ped_pgto_status'] == 'Pago') {?>
+                            <td style="width: 15%"><span class="label label-success"><?php echo $_smarty_tpl->tpl_vars['P']->value['ped_pgto_status'];?>
 </span></td>
-                        <?php } else { ?>
-                        <td style="width: 15%"><?php echo $_smarty_tpl->tpl_vars['P']->value['ped_pgto_status'];?>
+                            <?php } else { ?>
+                            <td style="width: 15%"><?php echo $_smarty_tpl->tpl_vars['P']->value['ped_pgto_status'];?>
 </td>
-                    <?php }?>
+                        <?php }?>
 
-                <form name="itens" method="post" action="<?php echo $_smarty_tpl->tpl_vars['PAG_ITENS']->value;?>
+                    <form name="itens" method="post" action="<?php echo $_smarty_tpl->tpl_vars['PAG_ITENS']->value;?>
 ">
 
-                    <input type="hidden" name="ped_cod" id="ped_cod" value="<?php echo $_smarty_tpl->tpl_vars['P']->value['ped_cod'];?>
+                        <input type="hidden" name="ped_cod" id="ped_cod" value="<?php echo $_smarty_tpl->tpl_vars['P']->value['ped_cod'];?>
 ">
-                    <td style="width: 10%"><button class="btn btn-default"><i class="glyphicon glyphicon-menu-hamburger"></i> Detalhes</button></td>
+                        <td style="width: 10%"><button class="btn btn-default"><i class="glyphicon glyphicon-menu-hamburger"></i> Detalhes</button></td>
 
-                </form>    
+                    </form>    
 
-                </tr>
-            <?php
+                    </tr>
+                <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
-        </table>
+            </table>
+        <?php } else { ?>
+            <h4 class="alert alert-info"> Sem pedidos realizados.</h4>
+        <?php }?>
     </center>
 
 

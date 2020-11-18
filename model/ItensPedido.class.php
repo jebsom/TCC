@@ -23,10 +23,6 @@ Class ItensPedido extends Conex {
 
         $this->ExecuteSQL($query, $params);
         $this->getListaItens();
-//        echo "<pre>";
-//        echo $query;
-//        var_dump($this->getListaPedidos());
-//        echo "</pre>";
     }
 
     private function getListaItens() {
