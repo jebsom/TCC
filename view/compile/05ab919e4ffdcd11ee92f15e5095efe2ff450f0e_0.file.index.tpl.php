@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.36, created on 2020-11-12 05:03:42
+/* Smarty version 3.1.36, created on 2020-11-18 17:47:49
   from 'D:\XAMPP\htdocs\TCC\view\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.36',
-  'unifunc' => 'content_5facb41e1b6ac3_77495079',
+  'unifunc' => 'content_5fb58875203e54_94339112',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '05ab919e4ffdcd11ee92f15e5095efe2ff450f0e' => 
     array (
       0 => 'D:\\XAMPP\\htdocs\\TCC\\view\\index.tpl',
-      1 => 1605153817,
+      1 => 1605732438,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5facb41e1b6ac3_77495079 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fb58875203e54_94339112 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
     <head>
@@ -68,7 +68,6 @@ function content_5facb41e1b6ac3_77495079 (Smarty_Internal_Template $_smarty_tpl)
             <!-- começa a div topo -->
             <div class="row" id="topo">
 
-
                 <div class="container">
                     <div class="col-md-6">
                         <img src="<?php echo $_smarty_tpl->tpl_vars['GET_TEMPLATE']->value;?>
@@ -76,121 +75,99 @@ function content_5facb41e1b6ac3_77495079 (Smarty_Internal_Template $_smarty_tpl)
                     </div>
 
                     <div class="col-md-6 text-right">
-
-                        <br><?php if ($_smarty_tpl->tpl_vars['LOGADO']->value == true) {?>
-                        Olá: <?php echo $_smarty_tpl->tpl_vars['USER']->value;?>
+                        <br>
+                        <?php if ($_smarty_tpl->tpl_vars['LOGADO']->value == true) {?>
+                            Olá: <?php echo $_smarty_tpl->tpl_vars['USER']->value;?>
  <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_LOGOFF']->value;?>
 " class="btn btn-danger"><i class="glyphicon glyphicon-log-out"></i> Sair </a> 
                         <?php }?>
+                    </div>
 
+                </div>    
+
+            </div>
+
+            <div class="row" id="barra-menu">
+                <nav class="navbar navbar-inverse">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
                         </div>
-                    </div>    
-                </div><!-- fim da div topo -->
-
-                <!-- começa a barra MENU-->
-                <div class="row" id="barra-menu">
-
-                    <!--começa navBAR-->
-                    <nav class="navbar navbar-inverse">
-
-                        <!-- container navBAr-->
-                        <div class="container">
-                            <!-- header da navbar-->
-                            <div class="navbar-header">
-                                <!-- botao que mostra e esconde a navbar--> 
-                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                                    <span class="sr-only">Toggle navigation</span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                </button>
-
-                            </div><!--fim header navbar-->  
-
-                            <div class="collapse navbar-collapse" id="navbar">
-                                <ul class="nav navbar-nav">
-                                    <li><a href="<?php echo $_smarty_tpl->tpl_vars['GET_HOME']->value;?>
+                        <div class="collapse navbar-collapse" id="navbar">
+                            <ul class="nav navbar-nav">
+                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['GET_HOME']->value;?>
 "><i class="glyphicon glyphicon-home"></i> Home </a> </li>
-                                    <li><a href="<?php echo $_smarty_tpl->tpl_vars['PAG_PRODUTOS']->value;?>
+                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['PAG_PRODUTOS']->value;?>
 "><i class="glyphicon glyphicon-tag"></i> Produtos</a> </li>
-                                    <li><a href="<?php echo $_smarty_tpl->tpl_vars['PAG_CONTA']->value;?>
+                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['PAG_CONTA']->value;?>
 "><i class="glyphicon glyphicon-user"></i> Minha Conta </a> </li>
-                                    <li><a href="<?php echo $_smarty_tpl->tpl_vars['PAG_CARRINHO']->value;?>
+                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['PAG_CARRINHO']->value;?>
 "><i class="glyphicon glyphicon-shopping-cart"></i> Carrinho </a> </li>
-                                    <li><a href="<?php echo $_smarty_tpl->tpl_vars['PAG_CONTATO']->value;?>
+                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['PAG_CONTATO']->value;?>
 " ><i class="glyphicon glyphicon-envelope"></i> Contato </a> </li>
+                            </ul>
+                            <form class="navbar-form navbar-right" role="search">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Digite para buscar" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Buscar</button>
+                            </form>
+                        </div>
 
-                                </ul>
+                    </div> 
 
+                </nav>
 
-                                <form class="navbar-form navbar-right" role="search">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Digite para buscar" required>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary">Buscar</button>
-                                </form>
+            </div> 
 
-                            </div><!-- fim navbar collapse-->   
+            <div class="row" id="conteudo">
 
+                <div class="container"> 
 
-                        </div> <!--fim container navBar-->
+                    <!-- coluna da esquerda -->
+                    <div class="col-md-2" id="lateral">
 
-                    </nav><!-- fim da navBar-->   
-
-
-
-
-
-                </div> <!-- fim barra menu--> 
-
-                <!-- começa DIV conteudo-->
-                <div class="row" id="conteudo">
-
-                    <div class="container"> 
-
-                        <!-- coluna da esquerda -->
-                        <div class="col-md-2" id="lateral">
-
-                            <div class="list-group">
-                                <span class="list-group-item active"> Categorias</span>
-                                <?php
+                        <div class="list-group">
+                            <span class="list-group-item active"> Categorias</span>
+                            <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['CATEGORIAS']->value, 'Cat');
 $_smarty_tpl->tpl_vars['Cat']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['Cat']->value) {
 $_smarty_tpl->tpl_vars['Cat']->do_else = false;
 ?>
-                                    <a href="<?php echo $_smarty_tpl->tpl_vars['Cat']->value['cat_link'];?>
+                                <a href="<?php echo $_smarty_tpl->tpl_vars['Cat']->value['cat_link'];?>
 " class="list-group-item"><span class="glyphicon glyphicon-menu-right"></span> <?php echo $_smarty_tpl->tpl_vars['Cat']->value['cat_nome'];?>
 </a> 
-                                <?php
+                            <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-                                <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_PRODUTOS']->value;?>
+                            <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_PRODUTOS']->value;?>
 " class="list-group-item"><span class="glyphicon glyphicon-menu-right"></span> Todas Categorias</a> 
-                            </div><!--fim da list group-->              
+                        </div>            
 
-                        </div> <!-- finm coluna esquerda -->  
+                    </div>
 
-                        <!-- coluna direita CONTEUDO CENTRAL -->
-                        <div class="col-md-10">
-                            <ul class="breadcrumb">
-                                <li><a href="#"><i class="glyphicon glyphicon-home"></i> Home </a></li>
-                                <li><a href="#"> Produtos </a></li>
-                                <li><a href="#"> Info </a></li>
-                            </ul>   
+                    <!-- coluna direita CONTEUDO CENTRAL -->
+                    <div class="col-md-10">
 
-                            <?php 
+
+                        <?php 
                         Rotas::get_pagina();
-                            ?>
-                        </div>  <!--fim coluna direita-->  
-                    </div>   
-                </div>
-                <footer class="row" id="rodape">
-                    <center><h4><?php echo $_smarty_tpl->tpl_vars['TITULO']->value;?>
+                        ?>
+                    </div>  <!--fim coluna direita-->  
+                </div>   
+            </div>
+            <footer class="row" id="rodape">
+                <center><h4><?php echo $_smarty_tpl->tpl_vars['TITULO']->value;?>
 </h4></center>
-                </footer>
-            </div> 
-        </body>
-    </html>
+            </footer>
+        </div> 
+    </body>
+</html>
 <?php }
 }

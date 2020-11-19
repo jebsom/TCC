@@ -59,6 +59,8 @@ Class Pedidos extends Conex {
         if ($cliente != null) {
             $cli = (int) $cliente;
             $query .= " WHERE p.ped_cliente = {$cli}";
+            $query .= " ORDER BY p.ped_id";
+            $query .= $this->paginacaoLinks("ped_id", $this->prefix . "pedidos");
         }
         $this->ExecuteSQL($query);
         $this->getListaPedidos();

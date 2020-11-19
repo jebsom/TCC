@@ -38,8 +38,8 @@
                 <td>{$P.cat_nome}</td>
                 <td class="text-right">R$ {$P.prod_valor}</td>
                 <td>
-                    <form name="proeditar" method="post" action="">
-                        <input type="hidden" name="pro_id" id="pro_id" value="{$P.prod_id}">
+                    <form name="prodeditar" method="post" action="{$PAG_PRODUTO_EDITAR}">
+                        <input type="hidden" name="prod_id" id="prod_id" value="{$P.prod_id}">
                         <button class="btn btn-success"> <i class="glyphicon glyphicon-pencil"></i> </button>
                     </form>  
 
@@ -47,9 +47,9 @@
 
                 <td>
 
-                    <form name="proimg" method="post" action="">
-                        <input type="hidden" name="pro_id" id="pro_id" value="{$P.prod_id}">
-                        <input type="hidden" name="pro_nome" id="pro_nome" value="{$P.prod_nome}">
+                    <form name="prodimg" method="post" action="">
+                        <input type="hidden" name="prod_id" id="prod_id" value="{$P.prod_id}">
+                        <input type="hidden" name="prod_nome" id="prod_nome" value="{$P.prod_nome}">
                         <button class="btn btn-info"> <i class="glyphicon glyphicon-picture"></i> </button>
 
                     </form>  

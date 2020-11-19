@@ -7,13 +7,13 @@
 
         <div class="col-md-6">
             <label>Produto</label>
-            <input type="text" name="pro_nome" id="pro_nome" class="form-control"  required >
+            <input type="text" name="prod_nome" id="prod_nome" class="form-control"  required >
         </div>
 
         <div class="col-md-4">
             <label>Catogoria</label>
-            <select name="pro_categoria" id="pro_categoria" class="form-control" required>
-                <option value=""> Escolha </option>                           
+            <select name="prod_categoria" id="prod_categoria" class="form-control" required>
+                <option value="teste"> Escolha </option>                           
                 {foreach from=$CATEGORIAS item=C}                    
                     <option value="{$C.cat_id}">{$C.cat_nome}</option>                                        
                 {/foreach}                
@@ -83,9 +83,12 @@
         <div class="col-md-12">
             <label>Descrição</label>
             <textarea name="prod_descricao" id="prod_descricao" rows="5" class="form-control" ></textarea>
-            {*<script>
-            tinymce.init({selector: 'textarea'});
-            </script> *}
+            <script src="{$GET_TEMA}/tema/js/tinymce/tinymce.min.js"></script>
+            <script type="text/javascript">
+                tinymce.init({
+                    selector: "textarea"
+                });
+            </script>
         </div>
 
         <div class="col-md-12">
@@ -109,7 +112,6 @@
 <br>
 <br>
 <br>
-
 
 
 
