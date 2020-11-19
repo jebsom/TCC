@@ -17,25 +17,28 @@ if (isset($_POST['prod_nome']) && isset($_POST['prod_valor'])) {
     $prod_img = $_FILES['prod_img']['name'];
     $prod_descricao = $_POST['prod_descricao'];
     $prod_slug = $_POST['prod_slug'];
+    $prod_id = $_POST['prod_id'];
 
-    if (!empty($_FILES)) {
+    if (!empty($_FILES['prod_img']['name'])) {
         $upload = new ImageUpload();
         if ($upload->Upload(900, 'prod_img')) {
             $prod_img = $upload->retorno;
         } else {
             exit('Erro ao enviar imagem!');
         }
+    } else {
+        $prod_img = $_POST['prod_img_atual'];
     }
 
     $gravar = new Produtos();
 
     $gravar->prepararProdutos($prod_nome, $prod_categoria, $prod_ativo, $prod_modelo, $prod_refer, $prod_valor, $prod_estoque, $prod_peso, $prod_img, $prod_descricao, $prod_slug);
 
-    if ($gravar->inserirProdutos()) {
+    if ($gravar->editarProdutos($prod_id)) {
         echo '<div class="alert alert-success">Produto cadastrado com sucesso</div>';
         Rotas::redirecionar(2, Rotas::pag_produtos_adm());
     } else {
-        echo '<div class="alert alert-darger">Erro ao cadastrar o produto.' . Sitema::VoltarPagina() . '</div>';
+        echo '<div class="alert alert-darger">Erro ao cadastrar o produto.' . Sistema::VoltarPagina() . '</div>';
 
         exit();
     }

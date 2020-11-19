@@ -137,14 +137,12 @@ Class Produtos extends Conex {
         }
     }
 
-    function editarProdutos() {
+    function editarProdutos($prod_id) {
 
-        $query = "UPDATE {$this->prefix}produtos SET (prod_nome, prod_categoria, prod_ativo, prod_modelo, prod_refer,";
-        $query .= " prod_valor, prod_estoque, prod_peso , prod_img, prod_descricao, prod_slug)";
+        $query = "UPDATE {$this->prefix}produtos SET prod_nome = :prod_nome, prod_categoria = :prod_categoria, prod_ativo = :prod_ativo, prod_modelo = :prod_modelo, prod_refer = :prod_refer,";
+        $query .= " prod_valor = :prod_valor, prod_estoque = :prod_estoque, prod_peso = :prod_peso, prod_img = :prod_img, prod_descricao = :prod_desc, prod_slug = :prod_slug";
 //        prod_altura, prod_largura, prod_comprimento ,
-        $query .= " VALUES ";
-        $query .= " ( :prod_nome, :prod_categoria, :prod_ativo, :prod_modelo, :prod_refer, :prod_valor, :prod_estoque, :prod_peso ,";
-        $query .= "  :prod_img, :prod_desc, :prod_slug)";
+        $query .= " WHERE prod_id = :prod_id ";
 //                . ", :prod_altura, :prod_largura, :prod_comprimento)*;
 
         $params = array(
@@ -162,15 +160,16 @@ Class Produtos extends Conex {
             ':prod_img' => $this->getProd_img(),
             ':prod_desc' => $this->getProd_desc(),
             ':prod_slug' => $this->getProd_slug(),
+            ':prod_id' => (int) $prod_id
         );
 
         if ($this->ExecuteSQL($query, $params)) {
             return TRUE;
         } else {
-//            echo '<pre>';
-//            var_dump($query);
-//            var_dump($params);
-//            echo '</pre>';
+            echo '<pre>';
+            var_dump($query);
+            var_dump($params);
+            echo '</pre>';
             return FALSE;
         }
     }

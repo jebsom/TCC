@@ -116,6 +116,7 @@
         <div class="col-md-4 text-right"></div>
 
         <input type="hidden" name="prod_id" value="{$PROD.1.prod_id}">
+
     </form>
 
 </section>
