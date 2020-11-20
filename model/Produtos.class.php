@@ -141,9 +141,7 @@ Class Produtos extends Conex {
 
         $query = "UPDATE {$this->prefix}produtos SET prod_nome = :prod_nome, prod_categoria = :prod_categoria, prod_ativo = :prod_ativo, prod_modelo = :prod_modelo, prod_refer = :prod_refer,";
         $query .= " prod_valor = :prod_valor, prod_estoque = :prod_estoque, prod_peso = :prod_peso, prod_img = :prod_img, prod_descricao = :prod_desc, prod_slug = :prod_slug";
-//        prod_altura, prod_largura, prod_comprimento ,
         $query .= " WHERE prod_id = :prod_id ";
-//                . ", :prod_altura, :prod_largura, :prod_comprimento)*;
 
         $params = array(
             ':prod_nome' => $this->getProd_nome(),
@@ -154,13 +152,29 @@ Class Produtos extends Conex {
             ':prod_valor' => $this->getProd_valor(),
             ':prod_estoque' => $this->getProd_estoque(),
             ':prod_peso' => $this->getProd_peso(),
-//            ':prod_altura' => $this->getProd_altura(),
-//            ':prod_largura' => $this->getProd_largura(),
-//            ':prod_comprimento' => $this->getProd_comprimento(),
             ':prod_img' => $this->getProd_img(),
             ':prod_desc' => $this->getProd_desc(),
             ':prod_slug' => $this->getProd_slug(),
             ':prod_id' => (int) $prod_id
+        );
+
+        if ($this->ExecuteSQL($query, $params)) {
+            return TRUE;
+        } else {
+            echo '<pre>';
+            var_dump($query);
+            var_dump($params);
+            echo '</pre>';
+            return FALSE;
+        }
+    }
+
+    function apagarProdutos($prod_id) {
+
+        $query = "DELETE FROM {$this->prefix}produtos WHERE prod_id = :id";
+
+        $params = array(
+            ':id' => (int) $prod_id
         );
 
         if ($this->ExecuteSQL($query, $params)) {

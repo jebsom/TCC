@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.36, created on 2020-11-19 02:13:06
+/* Smarty version 3.1.36, created on 2020-11-19 19:57:39
   from 'D:\XAMPP\htdocs\TCC\adm\view\adm_produtos_edit.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.36',
-  'unifunc' => 'content_5fb5fee2a57ae8_66097348',
+  'unifunc' => 'content_5fb6f86305fe34_32828323',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b5620f017dfa435b8ebf67841f1f5032b9d06392' => 
     array (
       0 => 'D:\\XAMPP\\htdocs\\TCC\\adm\\view\\adm_produtos_edit.tpl',
-      1 => 1605762781,
+      1 => 1605818816,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fb5fee2a57ae8_66097348 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fb6f86305fe34_32828323 (Smarty_Internal_Template $_smarty_tpl) {
 ?><h4 class="text-center"> Editar produto </h4>
 <hr>
 
@@ -147,13 +147,14 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
         <div class="col-md-4">
             <br>
-            <button class="btn btn-success btn-block btn-lg" name="btn_gravar"> Gravar </button>
+            <button class="btn btn-success btn-block btn-lg" name="btn_gravar"> Editar </button>
         </div>
 
         <div class="col-md-4 text-right"></div>
 
         <input type="hidden" name="prod_id" value="<?php echo $_smarty_tpl->tpl_vars['PROD']->value[1]['prod_id'];?>
 ">
+
     </form>
 
 </section>

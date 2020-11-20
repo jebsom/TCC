@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< Updated upstream
             <file>file:/C:/xampp/htdocs/TCC/model/Rotas.class.php</file>
             <file>file:/C:/xampp/htdocs/TCC/adm/view/adm_produtos.tpl</file>
             <file>file:/C:/xampp/htdocs/TCC/adm/controller/adm_produtos.php</file>
@@ -11,6 +12,15 @@
             <file>file:/C:/xampp/htdocs/TCC/adm/erro.php</file>
             <file>file:/C:/xampp/htdocs/TCC/adm/index.php</file>
             <file>file:/C:/xampp/htdocs/TCC/adm/controller/adm_produtos_add.php</file>
+=======
+            <file>file:/D:/XAMPP/htdocs/TCC/adm/controller/adm_produtos_add.php</file>
+            <file>file:/D:/XAMPP/htdocs/TCC/model/Rotas.class.php</file>
+            <file>file:/D:/XAMPP/htdocs/TCC/model/Produtos.class.php</file>
+            <file>file:/D:/XAMPP/htdocs/TCC/adm/controller/adm_produtos.php</file>
+            <file>file:/D:/XAMPP/htdocs/TCC/adm/controller/adm_produtos_edit.php</file>
+            <file>file:/D:/XAMPP/htdocs/TCC/adm/view/adm_produtos_edit.tpl</file>
+            <file>file:/D:/XAMPP/htdocs/TCC/model/ImageUpload.class.php</file>
+>>>>>>> Stashed changes
         </group>
     </open-files>
 </project-private>
