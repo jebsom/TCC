@@ -75,7 +75,7 @@
             <div class="col-md-6">
                 <hr>
                 <label>Imagem Principal</label>
-                <input type="file" name="prod_img" class="form-control " id="prod_img">
+                <input type="file" name="prod_img" class="form-control " id="prod_img" required>
             </div>
             <div class="col-md-3"></div>
         </div>

@@ -47,7 +47,7 @@
 
                 <td>
 
-                    <form name="prodimg" method="post" action="">
+                    <form name="prodimg" method="post" action="{$PAG_PRODUTO_IMG}">
                         <input type="hidden" name="prod_id" id="prod_id" value="{$P.prod_id}">
                         <input type="hidden" name="prod_nome" id="prod_nome" value="{$P.prod_nome}">
                         <button class="btn btn-info"> <i class="glyphicon glyphicon-picture"></i> </button>

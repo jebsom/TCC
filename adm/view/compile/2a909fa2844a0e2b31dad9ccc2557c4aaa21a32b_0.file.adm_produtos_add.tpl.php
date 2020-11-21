@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.36, created on 2020-11-18 22:23:52
+/* Smarty version 3.1.36, created on 2020-11-20 15:42:01
   from 'D:\XAMPP\htdocs\TCC\adm\view\adm_produtos_add.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.36',
-  'unifunc' => 'content_5fb5c928c41977_44998731',
+  'unifunc' => 'content_5fb80df95856b2_10538834',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2a909fa2844a0e2b31dad9ccc2557c4aaa21a32b' => 
     array (
       0 => 'D:\\XAMPP\\htdocs\\TCC\\adm\\view\\adm_produtos_add.tpl',
-      1 => 1605749026,
+      1 => 1605897644,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fb5c928c41977_44998731 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fb80df95856b2_10538834 (Smarty_Internal_Template $_smarty_tpl) {
 ?><h4 class="text-center"> Adicionar novo produto </h4>
 <hr>
 
@@ -92,7 +92,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             <div class="col-md-6">
                 <hr>
                 <label>Imagem Principal</label>
-                <input type="file" name="prod_img" class="form-control " id="prod_img">
+                <input type="file" name="prod_img" class="form-control " id="prod_img" required>
             </div>
             <div class="col-md-3"></div>
         </div>

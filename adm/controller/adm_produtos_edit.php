@@ -6,8 +6,9 @@ $gravar = new Produtos();
 if (isset($_POST['prod_apagar']) && isset($_POST['prod_id_apagar']) && $_POST['prod_apagar'] == 'SIM') {
     if ($gravar->apagarProdutos($_POST['prod_id_apagar'])) {
         echo '<div class="alert alert-warning">Produto excluído com sucesso!!</div>';
-        Rotas::redirecionar(2, Rotas::pag_produtos_adm());
         @unlink($_POST['prod_img_arquivo']);
+        Rotas::redirecionar(2, Rotas::pag_produtos_adm());
+        exit();
     } else {
         echo '<div class="alert alert-warning">Erro na exclusão do pedido.</div>';
     }
@@ -22,9 +23,6 @@ if (isset($_POST['prod_nome']) && isset($_POST['prod_valor'])) {
     $prod_valor = $_POST['prod_valor'];
     $prod_estoque = $_POST['prod_estoque'];
     $prod_peso = $_POST['prod_peso'];
-//    $prod_altura = $_POST['prod_altura'];
-//    $prod_largura = $_POST['prod_largura'];
-//    $prod_comprimento = $_POST['prod_comprimento'];
     $prod_img = $_FILES['prod_img']['name'];
     $prod_img_arquivo = $_POST['prod_img_arquivo'];
     $prod_descricao = $_POST['prod_descricao'];

@@ -17,6 +17,7 @@ $smarty->assign('PROD_TOTAL', $produtos->TotalDados());
 $smarty->assign('PAGINAS', $produtos->mostrarPaginacao());
 $smarty->assign('PRODUTO_ADD', Rotas::pag_produtosAdd_adm());
 $smarty->assign('PAG_PRODUTO_EDITAR', Rotas::pag_produtosEdit_adm());
+$smarty->assign('PAG_PRODUTO_IMG', Rotas::pag_produtosIMG_adm());
 
 $smarty->display('adm_produtos.tpl');
 /* 

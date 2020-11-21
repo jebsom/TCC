@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.36, created on 2020-11-19 01:58:37
+/* Smarty version 3.1.36, created on 2020-11-20 16:05:44
   from 'D:\XAMPP\htdocs\TCC\adm\view\adm_produtos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.36',
-  'unifunc' => 'content_5fb5fb7d1ffb86_18702249',
+  'unifunc' => 'content_5fb813882e7193_85459062',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '490b9a62ff7a1359f8962214b3dc76f265d3420d' => 
     array (
       0 => 'D:\\XAMPP\\htdocs\\TCC\\adm\\view\\adm_produtos.tpl',
-      1 => 1605761837,
+      1 => 1605899141,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fb5fb7d1ffb86_18702249 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fb813882e7193_85459062 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <h4 class="text-center">Gerenciar Produtos</h4>
 <hr>
@@ -82,7 +82,8 @@ $_smarty_tpl->tpl_vars['P']->do_else = false;
 
                 <td>
 
-                    <form name="prodimg" method="post" action="">
+                    <form name="prodimg" method="post" action="<?php echo $_smarty_tpl->tpl_vars['PAG_PRODUTO_IMG']->value;?>
+">
                         <input type="hidden" name="prod_id" id="prod_id" value="<?php echo $_smarty_tpl->tpl_vars['P']->value['prod_id'];?>
 ">
                         <input type="hidden" name="prod_nome" id="prod_nome" value="<?php echo $_smarty_tpl->tpl_vars['P']->value['prod_nome'];?>

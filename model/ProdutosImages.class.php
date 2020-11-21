@@ -12,7 +12,7 @@ Class ProdutosImages extends Conex {
 
     private function getLista() {
         $i = 1;
-        while ($listar = $this->Listar()):
+        while ($listar = $this->Listar()) {
             $this->itens[$i] = array(
                 'img_id' => $listar['img_id'],
                 'img_nome' => Rotas::imageLink($listar['img_nome'], 150, 150),
@@ -22,7 +22,28 @@ Class ProdutosImages extends Conex {
                 'img_arquivo' => $listar['img_nome']
             );
             $i++;
-        endwhile;
+        }
+    }
+
+    public function insereImages($img, $produto) {
+
+        $query = "INSERT INTO {$this->prefix}imagens (img_nome,img_prod_id)";
+        $query .= " VALUES (:img_nome,:img_prod_id) ";
+
+        $params = array(':img_nome' => $img, ':img_prod_id' => (int) $produto);
+
+        $this->ExecuteSQL($query, $params);
+    }
+
+    public function deletarImagens($img_nome) {
+
+
+        $query = " DELETE FROM {$this->prefix}imagens ";
+        $query .= " WHERE img_nome = :img_nome ";
+
+        $params = array(':img_nome' => $img_nome);
+
+        $this->ExecuteSQL($query, $params);
     }
 
 }

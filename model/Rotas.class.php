@@ -170,9 +170,9 @@ Class Rotas {
         return self::get_home_adm() . '/adm_produtos_edit';
     }
 
-    static function pag_produtosDel_adm() {
-        return self::get_home_adm() . '/adm_produtos_del';
-    }
+//    static function pag_produtosDel_adm() {
+//        return self::get_home_adm() . '/adm_produtos_del';
+//    }
 
     static function pag_produtosImg_adm() {
         return self::get_home_adm() . '/adm_produtos_img';
