@@ -96,9 +96,7 @@ Class Clientes extends Conex {
         $query .= " cli_cpf=:cli_cpf, cli_ddd=:cli_ddd,cli_fone=:cli_fone,cli_celular=:cli_celular ,cli_endereco=:cli_endereco ,cli_numero=:cli_numero,cli_bairro=:cli_bairro, ";
         $query .= " cli_cidade=:cli_cidade ,cli_uf=:cli_uf ,cli_cep=:cli_cep ,cli_email=:cli_email ,cli_data_cad=:cli_data_cad, cli_hora_cad=:cli_hora_cad, cli_pwd=:cli_senha ";
         $query .= " WHERE  cli_id = :cli_id";
-        //  $query .=" (:cli_nome, :cli_sobrenome,:cli_data_nasc,:cli_rg,";
-        //  $query .=" :cli_cpf, :cli_ddd,:cli_fone,:cli_celular ,:cli_endereco ,:cli_numero,:cli_bairro ,";
-        //  $query .=" :cli_cidade ,:cli_uf ,:cli_cep ,:cli_email ,:cli_data_cad, :cli_hora_cad, :cli_senha)";  
+
 
         $params = array(
             ':cli_nome' => $this->getCli_nome(),
@@ -122,7 +120,53 @@ Class Clientes extends Conex {
             ':cli_id' => (int) $id
         );
 
-        echo $query;
+        if ($this->ExecuteSQL($query, $params)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function editarClienteAdm($id) {
+
+        if ($this->GetClienteCPF($this->getCli_cpf()) > 0 && $this->getCli_cpf() != $_REQUEST['cli_cpf']) {
+            echo '<div class="alert alert-danger " id="erro_mostrar"> Este CPF já esta cadastrado ';
+            Sistema::VoltarPagina();
+            echo '</div>';
+            exit();
+        }
+
+        if ($this->GetClienteEmail($this->getCli_email()) > 0 && $this->getCli_email() != $_REQUEST['cli_email']) {
+            echo '<div class="alert alert-danger " id="erro_mostrar"> Este Email já esta cadastrado ';
+            Sistema::VoltarPagina();
+            echo '</div>';
+            exit();
+        }
+
+        $query = " UPDATE {$this->prefix}clientes SET cli_nome=:cli_nome, cli_sobrenome=:cli_sobrenome,cli_data_nasc=:cli_data_nasc,cli_rg=:cli_rg,";
+        $query .= " cli_cpf=:cli_cpf, cli_ddd=:cli_ddd,cli_fone=:cli_fone,cli_celular=:cli_celular ,cli_endereco=:cli_endereco ,cli_numero=:cli_numero,cli_bairro=:cli_bairro ,";
+        $query .= " cli_cidade=:cli_cidade ,cli_uf=:cli_uf ,cli_cep=:cli_cep ,cli_email=:cli_email  ";
+        $query .= " WHERE  cli_id = :cli_id";
+
+        $params = array(
+            ':cli_nome' => $this->getCli_nome(),
+            ':cli_sobrenome' => $this->getCli_sobrenome(),
+            ':cli_data_nasc' => $this->getCli_data_nasc(),
+            ':cli_rg' => $this->getCli_rg(),
+            ':cli_cpf' => $this->getCli_cpf(),
+            ':cli_ddd' => $this->getCli_ddd(),
+            ':cli_fone' => $this->getCli_fone(),
+            ':cli_celular' => $this->getCli_celular(),
+            ':cli_endereco' => $this->getCli_endereco(),
+            ':cli_numero' => $this->getCli_numero(),
+            ':cli_bairro' => $this->getCli_bairro(),
+            ':cli_cidade' => $this->getCli_cidade(),
+            ':cli_uf' => $this->getCli_uf(),
+            ':cli_cep' => $this->getCli_cep(),
+            ':cli_email' => $this->getCli_email(),
+            ':cli_id' => (int) $id
+        );
+
         if ($this->ExecuteSQL($query, $params)) {
             return true;
         } else {
@@ -158,6 +202,59 @@ Class Clientes extends Conex {
             ':email' => $this->getCli_email(),
         );
         $this->ExecuteSQL($query, $params);
+    }
+
+    function getClientes() {
+
+        $query = " SELECT * FROM {$this->prefix}clientes ";
+
+        $this->ExecuteSQL($query);
+        $this->getListaClientes();
+    }
+
+    /**
+     * 
+     * @param INT $id id do cliente 
+     */
+    function getClientesID($id) {
+
+        $query = " SELECT * FROM {$this->prefix}clientes ";
+        $query .= " WHERE cli_id = :id ";
+
+        $params = array(':id' => (int) $id);
+
+        $this->ExecuteSQL($query, $params);
+        $this->getListaClientes();
+    }
+
+    function getListaClientes() {
+
+        $i = 1;
+        while ($lista = $this->Listar()) {
+
+            $this->itens[$i] = array(
+                'cli_id' => $lista['cli_id'],
+                'cli_nome' => $lista['cli_nome'],
+                'cli_sobrenome' => $lista['cli_sobrenome'],
+                'cli_endereco' => $lista['cli_endereco'],
+                'cli_numero' => $lista['cli_numero'],
+                'cli_bairro' => $lista['cli_bairro'],
+                'cli_cidade' => $lista['cli_cidade'],
+                'cli_uf' => $lista['cli_uf'],
+                'cli_cpf' => $lista['cli_cpf'],
+                'cli_cep' => $lista['cli_cep'],
+                'cli_rg' => $lista['cli_rg'],
+                'cli_ddd' => $lista['cli_ddd'],
+                'cli_fone' => $lista['cli_fone'],
+                'cli_email' => $lista['cli_email'],
+                'cli_celular' => $lista['cli_celular'],
+                'cli_pwd' => $lista['cli_pwd'],
+                'cli_data_nasc' => $lista['cli_data_nasc'],
+                'cli_hora_cad' => $lista['cli_hora_cad'],
+                'cli_data_cad' => Sistema::Fdata($lista['cli_data_cad']),
+            );
+            $i++;
+        }
     }
 
     function getCli_nome() {
@@ -333,7 +430,7 @@ Class Clientes extends Conex {
 
     function setCli_senha($cli_senha) {
         $this->cli_senha = md5($cli_senha);
-        //Criptografia MD5
+//Criptografia MD5
     }
 
     function setCli_data_cad($cli_data_cad) {

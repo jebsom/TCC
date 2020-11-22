@@ -70,9 +70,7 @@
                                 <button type="submit" class="btn btn-primary">Buscar</button>
                             </form>
                         </div>
-
                     </div> 
-
                 </nav>
 
             </div> 
@@ -87,9 +85,9 @@
                         <div class="list-group">
                             <span class="list-group-item active"> Categorias</span>
                             {foreach from=$CATEGORIAS item=$Cat}
-                                <a href="{$Cat.cat_link}" class="list-group-item"><span class="glyphicon glyphicon-menu-right"></span> {$Cat.cat_nome}</a> 
+                                <a href="{$Cat.cat_link_adm}" class="list-group-item"><span class="glyphicon glyphicon-menu-right"></span> {$Cat.cat_nome}</a> 
                             {/foreach}
-                            <a href="{$PAG_PRODUTOS}" class="list-group-item"><span class="glyphicon glyphicon-menu-right"></span> Todas Categorias</a> 
+                            <a href="{$PAG_PRODUTOS_ADM}" class="list-group-item"><span class="glyphicon glyphicon-menu-right"></span> Todas Categorias</a> 
                         </div>            
 
                     </div>

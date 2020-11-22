@@ -14,7 +14,7 @@ if (!login::logado()) {
             Rotas::redirecionar(2, Rotas::pag_carrinho() . '#dadosfrete');
             exit('<h4 class="alert alert-danger">Realize o cálculo de frete para continuar! Voltando ao Carrinho ...</h4>');
         }
-        $referCodPedido = date('umdHms') . $_SESSION['CLI']['cli_id'];
+        $referCodPedido = date('dmYHisu') . $_SESSION['CLI']['cli_id'];
         if (!isset($_SESSION['PED']['pedido'])) {
             $_SESSION['PED']['pedido'] = $referCodPedido;
         }

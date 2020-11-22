@@ -22,7 +22,8 @@ Class Categorias extends Conex {
                 'cat_id' => $listar['cat_id'],
                 'cat_nome' => $listar['cat_nome'],
                 'cat_slug' => $listar['cat_slug'],
-                'cat_link' => Rotas::pag_produtos() . '/' . $listar['cat_id'] . '/' . $listar['cat_slug']
+                'cat_link' => Rotas::pag_produtos() . '/' . $listar['cat_id'] . '/' . $listar['cat_slug'],
+                'cat_link_adm' => Rotas::pag_produtos_adm() . '/' . $listar['cat_id'] . '/' . $listar['cat_slug']
             );
             $i++;
         endwhile;
