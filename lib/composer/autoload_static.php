@@ -213,6 +213,7 @@ class ComposerStaticInitc1175f6c8d451e16cf73bec0015f49fc
         'TPC_yyStackEntry' => __DIR__ . '/..' . '/smarty/smarty/libs/sysplugins/smarty_internal_configfileparser.php',
         'TP_yyStackEntry' => __DIR__ . '/..' . '/smarty/smarty/libs/sysplugins/smarty_internal_templateparser.php',
         'Template' => __DIR__ . '/../..' . '/model/Template.class.php',
+        'Usuario' => __DIR__ . '/../..' . '/model/Usuario.class.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

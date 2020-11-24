@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.36, created on 2020-11-22 15:55:42
+/* Smarty version 3.1.36, created on 2020-11-24 12:08:34
   from 'C:\xampp\htdocs\TCC\adm\view\adm_index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.36',
-  'unifunc' => 'content_5fbab42e30d371_69400588',
+  'unifunc' => 'content_5fbd21f27e98e4_93893799',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b0bb8f75d1f496e5a3c32e2674747ad5992ae79d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TCC\\adm\\view\\adm_index.tpl',
-      1 => 1606069734,
+      1 => 1606226868,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fbab42e30d371_69400588 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fbd21f27e98e4_93893799 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
     <head>
@@ -45,46 +45,35 @@ function content_5fbab42e30d371_69400588 (Smarty_Internal_Template $_smarty_tpl)
  src="<?php echo $_smarty_tpl->tpl_vars['GET_TEMPLATE']->value;?>
 /tema/contatos/contato.js" type="text/javascript"><?php echo '</script'; ?>
 >
-        <!-- meu aquivo pessoal de CSS-->
         <link href="<?php echo $_smarty_tpl->tpl_vars['GET_TEMPLATE']->value;?>
 /tema/css/tema.css" rel="stylesheet" type="text/css"/>
-        <!-- HTML5 shim e Respond.js para suporte no IE8 de elementos HTML5 e media queries -->
-        <!-- ALERTA: Respond.js não funciona se você visualizar uma página file:// -->
-        <!--[if lt IE 9]>
-          <?php echo '<script'; ?>
- src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"><?php echo '</script'; ?>
->
-          <?php echo '<script'; ?>
- src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"><?php echo '</script'; ?>
->
-        <![endif]-->
 
     </head>
     <body>
 
-        <!-- começa  o container geral -->
         <div class="container-fluid">
 
-            <!-- começa a div topo -->
             <div class="row" id="topo">
-
                 <div class="container">
                     <div class="col-md-6">
                         <img src="<?php echo $_smarty_tpl->tpl_vars['GET_TEMPLATE']->value;?>
 /images/logo.png" alt=""> 
                     </div>
-
                     <div class="col-md-6 text-right">
                         <br>
                         <?php if ($_smarty_tpl->tpl_vars['LOGADO']->value == true) {?>
                             Olá: <?php echo $_smarty_tpl->tpl_vars['USER']->value;?>
- <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_LOGOFF']->value;?>
-" class="btn btn-danger"><i class="glyphicon glyphicon-log-out"></i> Sair </a> 
+ 
+                            <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_ADM_SENHA']->value;?>
+" class="btn btn-warning"><i class="glyphicon glyphicon-asterisk"></i>Alterar Senha</a> 
+                            <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_LOGOFF']->value;?>
+" class="btn btn-danger"><i class="glyphicon glyphicon-log-out"></i> Sair </a><br> <br>
+                            <h6><p>Último logn em: <?php echo $_smarty_tpl->tpl_vars['DATA']->value;?>
+ as <?php echo $_smarty_tpl->tpl_vars['HORA']->value;?>
+</p></h6>
                         <?php }?>
                     </div>
-
                 </div>    
-
             </div>
 
             <div class="row" id="barra-menu">
@@ -98,6 +87,7 @@ function content_5fbab42e30d371_69400588 (Smarty_Internal_Template $_smarty_tpl)
                                 <span class="icon-bar"></span>
                             </button>
                         </div>
+
                         <div class="collapse navbar-collapse" id="navbar">
                             <ul class="nav navbar-nav">
                                 <li><a href="<?php echo $_smarty_tpl->tpl_vars['GET_HOME_ADM']->value;?>
@@ -118,18 +108,16 @@ function content_5fbab42e30d371_69400588 (Smarty_Internal_Template $_smarty_tpl)
                                 <button type="submit" class="btn btn-primary">Buscar</button>
                             </form>
                         </div>
+
                     </div> 
                 </nav>
-
             </div> 
 
             <div class="row" id="conteudo">
 
                 <div class="container"> 
 
-                    <!-- coluna da esquerda -->
                     <div class="col-md-2" id="lateral">
-
                         <div class="list-group">
                             <span class="list-group-item active"> Categorias</span>
                             <?php
@@ -147,25 +135,50 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_PRODUTOS_ADM']->value;?>
 " class="list-group-item"><span class="glyphicon glyphicon-menu-right"></span> Todas Categorias</a> 
                         </div>            
-
                     </div>
 
-                    <!-- coluna direita CONTEUDO CENTRAL -->
                     <div class="col-md-10">
-
-
                         <?php 
                         Rotas::get_pagina();
                         ?>
-                    </div>  <!--fim coluna direita-->  
+                    </div>  
+                                        <h4 class="text-center text-danger"> Olá Administrador <b><?php echo $_smarty_tpl->tpl_vars['USER']->value;?>
+</b>, seja bem vindo! O que deseja fazer agora?</h4> 
+
+                    <section class="row">
+
+                        <div class="text-center">
+
+                            <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_CATEGORIAS_ADM']->value;?>
+" class="btn btn-success"><i class="glyphicon glyphicon-home"></i> Categorias</a>
+                            <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_PRODUTOS_ADM']->value;?>
+" class="btn btn-success"><i class="glyphicon glyphicon-barcode"></i> Produtos</a>
+                            <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_CLIENTES_ADM']->value;?>
+" class="btn btn-success"><i class="glyphicon glyphicon-edit"></i> Clientes</a>
+                            <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_PEDIDOS_ADM']->value;?>
+" class="btn btn-success"><i class="glyphicon glyphicon-shopping-cart"></i> Pedidos</a>
+                            <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_ADM_SENHA']->value;?>
+" class="btn btn-warning"> Alterar Senha </a>
+                            <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_LOGOFF']->value;?>
+" class="btn btn-danger"><i class="glyphicon glyphicon-log-out"></i> Sair </a>
+
+                        </div>
+
+                    </section>
+
                 </div>   
+
             </div>
+
             <footer class="row" id="rodape">
                 <center><h4><?php echo $_smarty_tpl->tpl_vars['TITULO']->value;?>
 </h4></center>
             </footer>
+
         </div> 
+
     </body>
+
 </html>
 <?php }
 }

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.36, created on 2020-11-18 14:15:57
+/* Smarty version 3.1.36, created on 2020-11-24 15:01:32
   from 'C:\xampp\htdocs\TCC\view\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.36',
-  'unifunc' => 'content_5fb556cd258193_26229858',
+  'unifunc' => 'content_5fbd4a7cdd8304_36421796',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '95caa3c33389ca6541cec413041aa824ed9da6c7' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TCC\\view\\index.tpl',
-      1 => 1605719754,
+      1 => 1606226868,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fb556cd258193_26229858 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fbd4a7cdd8304_36421796 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
     <head>
@@ -45,7 +45,6 @@ function content_5fb556cd258193_26229858 (Smarty_Internal_Template $_smarty_tpl)
  src="<?php echo $_smarty_tpl->tpl_vars['GET_TEMPLATE']->value;?>
 /tema/contatos/contato.js" type="text/javascript"><?php echo '</script'; ?>
 >
-        <!-- meu aquivo pessoal de CSS-->
         <link href="<?php echo $_smarty_tpl->tpl_vars['GET_TEMPLATE']->value;?>
 /tema/css/tema.css" rel="stylesheet" type="text/css"/>
         <!-- HTML5 shim e Respond.js para suporte no IE8 de elementos HTML5 e media queries -->

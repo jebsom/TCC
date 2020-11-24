@@ -1,5 +1,5 @@
 ﻿<?php
-require 'lib/autoload.php';
+require '../lib/autoload.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 

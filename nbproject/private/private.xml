@@ -5,6 +5,7 @@
         <group>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             <file>file:/D:/XAMPP/htdocs/TCC/adm/controller/adm_produtos_add.php</file>
 =======
 >>>>>>> Stashed changes
@@ -24,6 +25,13 @@
 =======
             <file>file:/D:/XAMPP/htdocs/TCC/adm/view/adm_categorias.tpl</file>
             <file>file:/D:/XAMPP/htdocs/TCC/model/Categorias.class.php</file>
+>>>>>>> Stashed changes
+=======
+            <file>file:/C:/xampp/htdocs/TCC/model/Rotas.class.php</file>
+            <file>file:/C:/xampp/htdocs/TCC/adm/controller/adm_clientes.php</file>
+            <file>file:/C:/xampp/htdocs/TCC/model/Pedidos.class.php</file>
+            <file>file:/C:/xampp/htdocs/TCC/adm/view/adm_pedidos.tpl</file>
+            <file>file:/C:/xampp/htdocs/TCC/adm/controller/adm_pedidos.php</file>
 >>>>>>> Stashed changes
         </group>
     </open-files>

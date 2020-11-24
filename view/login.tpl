@@ -40,12 +40,14 @@
                     <a href="{$PAG_CADASTRO}" class="btn btn-default "><i class="glyphicon glyphicon-pencil"></i> Me Cadastrar</a>
 
                     <a href="{$PAG_RECUPERAR}" class="btn btn-default "><i class="glyphicon glyphicon-question-sign"></i> Esqueci a Senha</a>
-
+                    <br>
+                    <center><a href="{$PAG_ADM}" class="btn btn-warning "><i class="glyphicon glyphicon-question-sign"></i> Sou Administrador</a></center>
                 </div>
 
             </div>
-
             <div class="col-md-4 text-center"></div>
+
+
 
         </form>
 

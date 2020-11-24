@@ -198,4 +198,5 @@ return array(
     'TPC_yyStackEntry' => $vendorDir . '/smarty/smarty/libs/sysplugins/smarty_internal_configfileparser.php',
     'TP_yyStackEntry' => $vendorDir . '/smarty/smarty/libs/sysplugins/smarty_internal_templateparser.php',
     'Template' => $baseDir . '/model/Template.class.php',
+    'Usuario' => $baseDir . '/model/Usuario.class.php',
 );
