@@ -7,6 +7,7 @@ Class Pedidos extends Conex {
     }
 
     function pedidoGravar($cliente, $cod, $refer, $freteValor = null, $freteTipo = null) {
+
         $retorno = false;
         $query = "INSERT INTO " . $this->prefix . "pedidos ";
         $query .= " (ped_data, ped_hora, ped_cliente, ped_cod, ped_refer, ped_frete_valor, ped_frete_tipo)";
@@ -22,8 +23,6 @@ Class Pedidos extends Conex {
             ':frete_valor' => $freteValor,
             ':frete_tipo' => $freteTipo
         );
-
-
 
         $this->ExecuteSQL($query, $params);
 //        echo $query;
@@ -60,6 +59,8 @@ Class Pedidos extends Conex {
             $cli = (int) $cliente;
             $query .= " WHERE p.ped_cliente = {$cli}";
             $query .= " ORDER BY p.ped_id";
+            $query .= $this->paginacaoLinks("ped_id", $this->prefix . "pedidos WHERE ped_cliente=" . (int) $cli);
+        } else {
             $query .= $this->paginacaoLinks("ped_id", $this->prefix . "pedidos");
         }
         $this->ExecuteSQL($query);
@@ -68,6 +69,32 @@ Class Pedidos extends Conex {
 //        echo $query;
 //        var_dump($this->getListaPedidos());
 //        echo "</pre>";
+    }
+
+    function getPedidosRefer($refer) {
+
+        $query = "SELECT * FROM {$this->prefix}pedidos p INNER JOIN {$this->prefix}clientes c";
+        $query .= " ON p.ped_cliente = c.cli_id";
+        $query .= " WHERE ped_refer = :refer";
+        $query .= $this->paginacaoLinks("ped_id", $this->prefix . "pedidos WHERE ped_refer =  $refer");
+
+        $params = array(':refer' => $refer);
+
+        $this->ExecuteSQL($query, $params);
+        $this->getListaPedidos();
+    }
+
+    function getPedidosData($data_ini, $data_fim) {
+
+        $query = "SELECT * FROM {$this->prefix}pedidos p INNER JOIN {$this->prefix}clientes c";
+        $query .= " ON p.ped_cliente = c.cli_id";
+        $query .= " WHERE ped_data between :data_ini AND :data_fim";
+        $query .= $this->paginacaoLinks("ped_id", $this->prefix . "pedidos WHERE ped_data between $data_ini AND $data_fim");
+
+        $params = array(':data_ini' => $data_ini, ':data_fim' => $data_fim);
+
+        $this->ExecuteSQL($query, $params);
+        $this->getListaPedidos();
     }
 
     private function getListaPedidos() {
@@ -93,6 +120,21 @@ Class Pedidos extends Conex {
                 'cli_sobrenome' => $lista['cli_sobrenome'],
             );
             $i++;
+        }
+    }
+
+    function deletarPedido($ped_cod) {
+
+        $query = " DELETE FROM {$this->prefix}pedidos WHERE ped_cod = :ped_cod";
+        $params = array(':ped_cod' => $ped_cod);
+        $this->ExecuteSQL($query, $params);
+
+        $query_2 = " DELETE FROM {$this->prefix}pedidos_itens WHERE item_ped_cod = :ped_cod";
+        $params_2 = array(':ped_cod' => $ped_cod);
+        if ($this->ExecuteSQL($query_2, $params_2)) {
+            return TRUE;
+        } else {
+            return FALSE;
         }
     }
 

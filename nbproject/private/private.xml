@@ -4,11 +4,15 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             <file>file:/D:/XAMPP/htdocs/TCC/adm/controller/adm_produtos_add.php</file>
+=======
+>>>>>>> Stashed changes
             <file>file:/D:/XAMPP/htdocs/TCC/model/Rotas.class.php</file>
             <file>file:/D:/XAMPP/htdocs/TCC/model/Produtos.class.php</file>
-            <file>file:/D:/XAMPP/htdocs/TCC/adm/controller/adm_produtos.php</file>
+            <file>file:/D:/XAMPP/htdocs/TCC/adm/controller/adm_categorias.php</file>
             <file>file:/D:/XAMPP/htdocs/TCC/adm/controller/adm_produtos_edit.php</file>
+<<<<<<< Updated upstream
             <file>file:/D:/XAMPP/htdocs/TCC/adm/view/adm_produtos_edit.tpl</file>
             <file>file:/D:/XAMPP/htdocs/TCC/model/ImageUpload.class.php</file>
 =======
@@ -16,6 +20,10 @@
             <file>file:/C:/xampp/htdocs/TCC/model/Produtos.class.php</file>
             <file>file:/C:/xampp/htdocs/TCC/adm/view/adm_produtos_edit.tpl</file>
             <file>file:/C:/xampp/htdocs/TCC/adm/controller/adm_produtos_edit.php</file>
+>>>>>>> Stashed changes
+=======
+            <file>file:/D:/XAMPP/htdocs/TCC/adm/view/adm_categorias.tpl</file>
+            <file>file:/D:/XAMPP/htdocs/TCC/model/Categorias.class.php</file>
 >>>>>>> Stashed changes
         </group>
     </open-files>

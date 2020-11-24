@@ -17,6 +17,11 @@ if (!isset($_SESSION)) {
 
 require '../lib/autoload.php';
 
+if (!Login::logadoAdm()) {
+    Rotas::redirecionar(1, 'login.php');
+    exit('Erro!!! Acesso negado!');
+}
+
 $smarty = new Template();
 $categorias = new Categorias();
 $categorias->getCategorias();
@@ -33,15 +38,16 @@ $smarty->assign('PAG_CATEGORIAS_ADM', Rotas::pag_categorias_adm());
 $smarty->assign('PAG_PRODUTOS_ADM', Rotas::pag_produtos_adm());
 $smarty->assign('CATEGORIAS', $categorias->getItens());
 $smarty->assign('DATA', Sistema::DataAtualBR());
-$smarty->assign('LOGADO', Login::logado());
-//$smarty->assign('LOGADO', Login::logado_adm());
-//$smarty->assign('PAG_LOGOFF', Rotas::get_home_adm() . '/logoff');
-//$smarty->assign('PAG_SENHA', Rotas::get_home_adm() . '/adm_senha');
+$smarty->assign('LOGADO', Login::logadoAdm());
+$smarty->assign('PAG_ADM_SENHA', Rotas::get_home_adm() . '/adm_senha');
+$smarty->assign('PAG_LOGOFF', Rotas::pag_logoff_adm());
 
-if (Login::logado()) {
-    $smarty->assign('USER', $_SESSION['CLI']['cli_nome']);
+if (Login::logadoAdm()) {
+    $smarty->assign('USER', $_SESSION['ADM']['user_nome']);
+    $smarty->assign('DATA', $_SESSION['ADM']['user_data']);
+    $smarty->assign('HORA', $_SESSION['ADM']['user_hora']);
 }
-$smarty->assign('PAG_LOGOFF', Rotas::pag_logoff());
+
 
 $dados = new Conex();
 

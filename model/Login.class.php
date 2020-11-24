@@ -54,8 +54,47 @@ Class Login extends Conex {
         }
     }
 
+    function getLoginAdm($user, $senha) {
+
+        $this->setUser($user);
+        $this->setSenha($senha);
+
+        $query = "SELECT * FROM {$this->prefix}user WHERE user_email = :email AND user_pwd = :senha";
+
+        $params = array(':email' => $this->getUser(),
+            ':senha' => $this->getSenha());
+
+        $this->ExecuteSQL($query, $params);
+
+        if ($this->TotalDados() > 0) {
+
+            $lista = $this->Listar();
+
+            $_SESSION['ADM']['user_id'] = $lista['user_id'];
+            $_SESSION['ADM']['user_nome'] = $lista['user_nome'];
+            $_SESSION['ADM']['user_email'] = $lista['user_email'];
+            $_SESSION['ADM']['user_pwd'] = $lista['user_pwd'];
+            $_SESSION['ADM']['user_data'] = Sistema::DataAtualBR();
+            $_SESSION['ADM']['user_hora'] = Sistema::HoraAtual();
+
+            return TRUE;
+        } else {
+
+            echo '<h4 class="alert alert-danger"> O login incorreto </h4>';
+            return FALSE;
+        }
+    }
+
     static function logado() {
         if (isset($_SESSION['CLI']['cli_email']) && isset($_SESSION['CLI']['cli_id'])) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+
+    static function logadoAdm() {
+        if (isset($_SESSION['ADM']['user_nome']) && isset($_SESSION['ADM']['user_id'])) {
             return TRUE;
         } else {
             return FALSE;
@@ -66,6 +105,11 @@ Class Login extends Conex {
         unset($_SESSION['CLI']);
         echo '<h4 class="alert alert-danger">Encerrando a sessão...</h4>';
         Rotas::redirecionar(2, Rotas::pag_cliente_login());
+    }
+
+    static function logoffAdm() {
+        unset($_SESSION['ADM']);
+        Rotas::redirecionar(0, 'login.php');
     }
 
     static function acessoNegado() {
@@ -112,7 +156,7 @@ Class Login extends Conex {
 
 }
 
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.

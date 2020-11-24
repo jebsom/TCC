@@ -32,10 +32,16 @@
 
 }
 
+#bloco_login_adm{
+    background-color: #fff;
+    border-radius: 15px;
+    margin: 20px;
+    padding: 30px;
 
-/* CLASSES OVERRIDE DO BOOTSTRAP para personalização*/
 
-/* navbar e menu navbar */
+}
+
+
 .navbar-inverse{
     border-radius: 0;
 

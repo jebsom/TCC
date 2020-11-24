@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.36, created on 2020-11-06 04:19:10
+/* Smarty version 3.1.36, created on 2020-11-23 22:35:50
   from 'D:\XAMPP\htdocs\TCC\view\produtos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.36',
-  'unifunc' => 'content_5fa4c0ae338c08_12636428',
+  'unifunc' => 'content_5fbc63762357e6_37534108',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '18ab4ac710fb39f9cbdf721568675718776a3192' => 
     array (
       0 => 'D:\\XAMPP\\htdocs\\TCC\\view\\produtos.tpl',
-      1 => 1604632688,
+      1 => 1606174728,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fa4c0ae338c08_12636428 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fbc63762357e6_37534108 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <hr>
 <?php if ($_smarty_tpl->tpl_vars['PROD_TOTAL']->value < 1) {?>
@@ -63,7 +63,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </section>
 
 
-<!--  paginação inferior   -->  
 <section id="pagincao" class="row">
     <center>
         <?php echo $_smarty_tpl->tpl_vars['PAGINAS']->value;?>

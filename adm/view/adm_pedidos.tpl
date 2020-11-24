@@ -60,13 +60,13 @@
                     {/if}
                     <td style="width: 10%">
                         <form name="itens" method="post" action="{$PAG_ITENS}">
-                            <input type="hidden" name="cod_pedido" id="cod_pedido" value="{$P.ped_cod}">
+                            <input type="hidden" name="ped_cod" id="ped_cod" value="{$P.ped_cod}">
                             <button class="btn btn-info"><i class="glyphicon glyphicon-menu-hamburger"></i> Detalhes</button>
                         </form> 
                     </td>
                     <td>
                         <form name="deletar" method="post" action="">
-                            <input type="hidden" name="cod_pedido" id="cod_pedido" value="{$P.ped_cod}">
+                            <input type="hidden" name="ped_cod" id="ped_cod" value="{$P.ped_cod}">
                             <button class="btn btn-danger" name="ped_apagar" value="ped_apagar"><i class="glyphicon glyphicon-remove"></i> </button>
                         </form> 
                     </td>
@@ -76,4 +76,9 @@
     </center>
 
 
+</section>
+<section id="pagincao" class="row">
+    <center>
+        {$PAGINAS}
+    </center>
 </section>

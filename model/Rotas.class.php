@@ -178,4 +178,8 @@ Class Rotas {
         return self::get_home_adm() . '/adm_produtos_img';
     }
 
+    static function pag_logoff_adm() {
+        return self::get_home_adm() . '/adm_logoff';
+    }
+
 }

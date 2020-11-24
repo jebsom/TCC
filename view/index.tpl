@@ -10,7 +10,6 @@
         <script src="{$GET_TEMPLATE}/tema/js/jquery-3.min.js" type="text/javascript"></script>
         <script src="{$GET_TEMPLATE}/tema/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="{$GET_TEMPLATE}/tema/contatos/contato.js" type="text/javascript"></script>
-        <!-- meu aquivo pessoal de CSS-->
         <link href="{$GET_TEMPLATE}/tema/css/tema.css" rel="stylesheet" type="text/css"/>
         <!-- HTML5 shim e Respond.js para suporte no IE8 de elementos HTML5 e media queries -->
         <!-- ALERTA: Respond.js não funciona se você visualizar uma página file:// -->
