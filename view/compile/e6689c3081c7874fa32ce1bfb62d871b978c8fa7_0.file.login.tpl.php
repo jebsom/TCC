@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.36, created on 2020-11-17 04:30:09
+/* Smarty version 3.1.36, created on 2020-11-24 17:40:17
   from 'D:\XAMPP\htdocs\TCC\view\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.36',
-  'unifunc' => 'content_5fb343c1ec61b4_18220280',
+  'unifunc' => 'content_5fbd6fb14389e0_54921880',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e6689c3081c7874fa32ce1bfb62d871b978c8fa7' => 
     array (
       0 => 'D:\\XAMPP\\htdocs\\TCC\\view\\login.tpl',
-      1 => 1605580760,
+      1 => 1606249212,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fb343c1ec61b4_18220280 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fbd6fb14389e0_54921880 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['LOGADO']->value == true) {?>
 
 
@@ -61,12 +61,15 @@ if ($_smarty_tpl->tpl_vars['LOGADO']->value == true) {?>
 
                     <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_RECUPERAR']->value;?>
 " class="btn btn-default "><i class="glyphicon glyphicon-question-sign"></i> Esqueci a Senha</a>
-
+                    <br>
+                    <center><a href="<?php echo $_smarty_tpl->tpl_vars['PAG_ADM']->value;?>
+" class="btn btn-warning "><i class="glyphicon glyphicon-question-sign"></i> Sou Administrador</a></center>
                 </div>
 
             </div>
-
             <div class="col-md-4 text-center"></div>
+
+
 
         </form>
 

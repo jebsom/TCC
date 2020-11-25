@@ -134,6 +134,16 @@ Class Rotas {
         echo $url;
     }
 
+    static function pag_pedido_retorno() {
+
+        return self::get_home() . '/pedido_retorno';
+    }
+
+    static function pag_pedido_retorno_erro() {
+
+        return self::get_home() . '/pedido_retorno_erro';
+    }
+
     static function get_home_adm() {
         return self::get_home() . '/' . self::$pasta_adm;
     }

@@ -11,7 +11,7 @@ class Itens extends Conex {
     function getItensPedido($pedido, $cliente = null) {
         $query = "SELECT * FROM {$this->prefix}pedidos p, {$this->prefix}pedidos_itens i, {$this->prefix}produtos d";
         $query .= " WHERE p.ped_cod = i.item_ped_cod AND i.item_produto = d.prod_id";
-        $query .= " AND p.ped_cod = :pedido";
+        $query .= " AND p.ped_cod = $pedido";
 
         if ($cliente != null) {
             $query .= " AND p.ped_cliente = :cliente";
@@ -20,6 +20,10 @@ class Itens extends Conex {
         $params[':pedido'] = $pedido;
         $this->ExecuteSQL($query, $params);
         $this->getListaItens();
+//        echo "<pre>";
+//        var_dump($query);
+//        var_dump($params);
+//        echo "</pre>";
     }
 
     function getListaItens() {

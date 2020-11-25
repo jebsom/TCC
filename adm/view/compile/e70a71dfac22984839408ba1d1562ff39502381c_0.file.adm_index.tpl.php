@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.36, created on 2020-11-24 01:50:21
+/* Smarty version 3.1.36, created on 2020-11-24 17:39:55
   from 'D:\XAMPP\htdocs\TCC\adm\view\adm_index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.36',
-  'unifunc' => 'content_5fbc910d50c439_21356827',
+  'unifunc' => 'content_5fbd6f9b41bf02_46546738',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e70a71dfac22984839408ba1d1562ff39502381c' => 
     array (
       0 => 'D:\\XAMPP\\htdocs\\TCC\\adm\\view\\adm_index.tpl',
-      1 => 1606193405,
+      1 => 1606195038,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fbc910d50c439_21356827 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fbd6f9b41bf02_46546738 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
     <head>
@@ -64,7 +64,8 @@ function content_5fbc910d50c439_21356827 (Smarty_Internal_Template $_smarty_tpl)
                         <?php if ($_smarty_tpl->tpl_vars['LOGADO']->value == true) {?>
                             Olá: <?php echo $_smarty_tpl->tpl_vars['USER']->value;?>
  
-                            <a href="" class="btn btn-warning"><i class="glyphicon glyphicon-asterisk"></i>Alterar Senha</a> 
+                            <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_ADM_SENHA']->value;?>
+" class="btn btn-warning"><i class="glyphicon glyphicon-asterisk"></i>Alterar Senha</a> 
                             <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_LOGOFF']->value;?>
 " class="btn btn-danger"><i class="glyphicon glyphicon-log-out"></i> Sair </a><br> <br>
                             <h6><p>Último logn em: <?php echo $_smarty_tpl->tpl_vars['DATA']->value;?>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.36, created on 2020-11-18 02:11:04
+/* Smarty version 3.1.36, created on 2020-11-25 02:12:56
   from 'D:\XAMPP\htdocs\TCC\view\clientes_itens.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.36',
-  'unifunc' => 'content_5fb4ace876eba2_29561581',
+  'unifunc' => 'content_5fbde7d88b60c8_42653429',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c3dab3160d2c0fcea2230261b544678e27c20f02' => 
     array (
       0 => 'D:\\XAMPP\\htdocs\\TCC\\view\\clientes_itens.tpl',
-      1 => 1605676239,
+      1 => 1606281151,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fb4ace876eba2_29561581 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fbde7d88b60c8_42653429 (Smarty_Internal_Template $_smarty_tpl) {
 ?><h4 class="text-center">Dados do pedido</h4>
 
 <section class="row">
@@ -112,20 +112,43 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     <section class="row">
         <h3 class="text-center"> Formas de pagamento </h3>     
 
-        <div class="col-md-4"></div>
-
+        <div class="col-md-4">
+        </div>
+        <!-- botao de pagamento  -->
+        <div class="col-md-4">
+            <center>
+                <button class="btn btn-success btn-lg block" onclick="PagSeguroLightbox({
+                        code: '<?php echo $_smarty_tpl->tpl_vars['PS_COD']->value;?>
+'
+                    }, {
+                        success: function (transactionCode) {
+                            alert('Transação efetiva - ' + transactionCode);
+                            window.location = '<?php echo $_smarty_tpl->tpl_vars['PAG_RETORNO']->value;?>
+/<?php echo $_smarty_tpl->tpl_vars['REFER']->value;?>
+';
+                                        },
+                                        abort: function () {
+                                            alert('Erro no processo de pagamento');
+                                            window.location = '<?php echo $_smarty_tpl->tpl_vars['PAG_RETORNO_ERRO']->value;?>
+/<?php echo $_smarty_tpl->tpl_vars['REFER']->value;?>
+';
+                                                        }
+                                                    });"> Pague com PagSeguro</button>
+                <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['PS_SCRIPT']->value;?>
+"><?php echo '</script'; ?>
+>
+                <img src="<?php echo $_smarty_tpl->tpl_vars['GET_TEMPLATE']->value;?>
+/images/logo-pagseguro.png"  alt=""> 
+                <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['PS_SCRIPT']->value;?>
+"><?php echo '</script'; ?>
+>
+            </center>
+        </div>
         <div class="col-md-4">
 
-            BOTÃO DE PAGAMENTO
-            <img src="<?php echo $_smarty_tpl->tpl_vars['TEMA']->value;?>
-/images/logo-pagseguro.png"  alt=""> 
-            <?php echo '<script'; ?>
- type="text/javascript" src=""><?php echo '</script'; ?>
->
-
         </div>
-        <div class="col-md-4"></div>
-
     </section>
 <?php }
 }

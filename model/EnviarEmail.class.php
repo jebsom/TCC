@@ -1,5 +1,13 @@
 ﻿<?php
-require '../lib/autoload.php';
+if (isset($_POST['adm_senha_atual']) && isset($_POST['adm_senha'])) {
+    require '../lib/autoload.php';
+} else {
+    require './lib/autoload.php';
+}
+
+//print_r($_POST);
+//exit();
+
 
 use PHPMailer\PHPMailer\PHPMailer;
 
@@ -12,21 +20,21 @@ class EnviarEmail extends PHPMailer {
     function __construct() {
 
         parent::__construct();
-        // defino que é SMTP		
+// defino que é SMTP		
         parent::IsSMTP();
-        // se é em HTML
+// se é em HTML
         parent::IsHTML(true);
-        // codificação charset padrao UTF8
+// codificação charset padrao UTF8
         $this->CharSet = 'UTF-8';
-        // modo debug 0=off 1 e 2=mostram informações do envio ou erros
+// modo debug 0=off 1 e 2=mostram informações do envio ou erros
         $this->SMTPDebug = 0;
-        //Indica a porta do seu servidor
+//Indica a porta do seu servidor
         $this->Port = Config::EMAIL_PORTA;
-        //smtp.dominio.com.br //seu servidor smtp
+//smtp.dominio.com.br //seu servidor smtp
         $this->Host = Config::EMAIL_HOST;
-        //define se tem ou autenticação no SMTP
+//define se tem ou autenticação no SMTP
         $this->SMTPAuth = Config::EMAIL_SMTPAUTH;
-        // define dados do remetendo EMAIL, SENHA  da conta SMTP
+// define dados do remetendo EMAIL, SENHA  da conta SMTP
         $this->FromName = Config::EMAIL_NOME;
         $this->From = Config::EMAIL_USER;
         $this->Username = Config::EMAIL_USER;
@@ -40,22 +48,22 @@ class EnviarEmail extends PHPMailer {
      */
     function Enviar($assunto, $msg, $destinatarios = array()) {
 
-        //seto dados da mensagem
+//seto dados da mensagem
         $this->Subject = $assunto;
         $this->Body = $msg;
 
-        // email de resposta
-        //	$this->AddReplyTo($reply);
-        // email para receber  uma cópia
-        //   $this->Addcc(Config::EMAIL_COPIA);
-        //passando um laço para pegar todos os destinatarios		
+// email de resposta
+//	$this->AddReplyTo($reply);
+// email para receber  uma cópia
+//   $this->Addcc(Config::EMAIL_COPIA);
+//passando um laço para pegar todos os destinatarios		
         foreach ($destinatarios as $email):
 
             $this->AddAddress($email, $email); //PARA MIM
 
         endforeach;
 
-        //enviando o email 
+//enviando o email 
         if (parent::Send()):
 
             $this->ClearAllRecipients();

@@ -70,16 +70,30 @@
     <section class="row">
         <h3 class="text-center"> Formas de pagamento </h3>     
 
-        <div class="col-md-4"></div>
-
+        <div class="col-md-4">
+        </div>
+        <!-- botao de pagamento  -->
+        <div class="col-md-4">
+            <center>
+                <button class="btn btn-success btn-lg block" onclick="PagSeguroLightbox({
+                        code: '{$PS_COD}'
+                    }, {
+                        success: function (transactionCode) {
+                            alert('Transação efetiva - ' + transactionCode);
+                            window.location = '{$PAG_RETORNO}/{$REFER}';
+                                        },
+                                        abort: function () {
+                                            alert('Erro no processo de pagamento');
+                                            window.location = '{$PAG_RETORNO_ERRO}/{$REFER}';
+                                                        }
+                                                    });"> Pague com PagSeguro</button>
+                <script type="text/javascript" src="{$PS_SCRIPT}"></script>
+                <img src="{$GET_TEMPLATE}/images/logo-pagseguro.png"  alt=""> 
+                <script type="text/javascript" src="{$PS_SCRIPT}"></script>
+            </center>
+        </div>
         <div class="col-md-4">
 
-            BOTÃO DE PAGAMENTO
-            <img src="{$TEMA}/images/logo-pagseguro.png"  alt=""> 
-            <script type="text/javascript" src=""></script>
-
         </div>
-        <div class="col-md-4"></div>
-
     </section>
 {/if}

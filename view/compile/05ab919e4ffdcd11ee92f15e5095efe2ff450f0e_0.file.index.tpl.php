@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.36, created on 2020-11-24 00:11:03
+/* Smarty version 3.1.36, created on 2020-11-24 19:52:53
   from 'D:\XAMPP\htdocs\TCC\view\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.36',
-  'unifunc' => 'content_5fbc79c71ad7b5_00506234',
+  'unifunc' => 'content_5fbd8ec59e60c3_04535240',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '05ab919e4ffdcd11ee92f15e5095efe2ff450f0e' => 
     array (
       0 => 'D:\\XAMPP\\htdocs\\TCC\\view\\index.tpl',
-      1 => 1606187037,
+      1 => 1606258345,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fbc79c71ad7b5_00506234 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fbd8ec59e60c3_04535240 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
     <head>
@@ -110,9 +110,9 @@ function content_5fbc79c71ad7b5_00506234 (Smarty_Internal_Template $_smarty_tpl)
                                 <li><a href="<?php echo $_smarty_tpl->tpl_vars['PAG_CONTATO']->value;?>
 " ><i class="glyphicon glyphicon-envelope"></i> Contato </a> </li>
                             </ul>
-                            <form class="navbar-form navbar-right" role="search">
+                            <form class="navbar-form navbar-right" role="search" method="post">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Digite para buscar" required>
+                                    <input type="text" name="txt_buscar" id="txt_buscar" class="form-control" placeholder="Digite para buscar" required>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Buscar</button>
                             </form>

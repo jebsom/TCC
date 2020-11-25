@@ -10,9 +10,9 @@ Class Pedidos extends Conex {
 
         $retorno = false;
         $query = "INSERT INTO " . $this->prefix . "pedidos ";
-        $query .= " (ped_data, ped_hora, ped_cliente, ped_cod, ped_refer, ped_frete_valor, ped_frete_tipo)";
+        $query .= " (ped_data, ped_hora, ped_cliente, ped_cod, ped_refer, ped_frete_valor, ped_frete_tipo, ped_pgto_status)";
         $query .= " VALUES ";
-        $query .= "  (:data, :hora, :cliente, :cod, :refer, :frete_valor, :frete_tipo)";
+        $query .= "  (:data, :hora, :cliente, :cod, :refer, :frete_valor, :frete_tipo, :ped_pgto_status)";
 
         $params = array(
             ':data' => Sistema::DataAtualUS(),
@@ -21,7 +21,8 @@ Class Pedidos extends Conex {
             ':cod' => $cod,
             ':refer' => $refer,
             ':frete_valor' => $freteValor,
-            ':frete_tipo' => $freteTipo
+            ':frete_tipo' => $freteTipo,
+            ':ped_pgto_status' => 'NAO'
         );
 
         $this->ExecuteSQL($query, $params);

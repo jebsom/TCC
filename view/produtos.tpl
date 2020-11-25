@@ -2,6 +2,7 @@
 <hr>
 {if $PROD_TOTAL <1}
     <h4 class="alert alert-danger"> Nenhum produto encontrado!!</h4>
+    <meta http-equiv="refresh" content="1;url='{$PRODUTOS}'">
 {/if}
 <!--  começa lista de produtos  ---->   
 <section id="produtos" class="row">  

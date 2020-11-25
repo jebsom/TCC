@@ -33,6 +33,7 @@ class ComposerStaticInitc1175f6c8d451e16cf73bec0015f49fc
         'Itens' => __DIR__ . '/../..' . '/model/Itens.class.php',
         'ItensPedido' => __DIR__ . '/../..' . '/model/ItensPedido.class.php',
         'Login' => __DIR__ . '/../..' . '/model/Login.class.php',
+        'PagamentoPS' => __DIR__ . '/../..' . '/model/PagamentoPS.class.php',
         'Paginacao' => __DIR__ . '/../..' . '/model/Paginacao.class.php',
         'Pedidos' => __DIR__ . '/../..' . '/model/Pedidos.class.php',
         'Produtos' => __DIR__ . '/../..' . '/model/Produtos.class.php',

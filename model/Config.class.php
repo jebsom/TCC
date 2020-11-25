@@ -27,6 +27,11 @@ Class Config {
     const EMAIL_SMTPAUTH = true;
     const EMAIL_SMTPSECURE = "TLS";
     const EMAIL_COPIA = "jvitorfm@rede.ulbra.br ";
+    //Constantes de PagSeguro
+    const PS_EMAIL = "jvitorfm@rede.ulbra.br"; // email pagseguro
+    const PS_TOKEN = ""; // token produção
+    const PS_TOKEN_SBX = "88358C3E7AE1463DBE5B94752A7D9D75";  // token do sandbox
+    const PS_AMBIENTE = "sandbox"; // production   /  sandbox
 
 }
 

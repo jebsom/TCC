@@ -8,7 +8,7 @@ class Carrinho {
         $i = 1;
         $sub = 1.00;
         foreach ($_SESSION['PRODS']as $lista) {
-            $sub = ($lista['VALOR'] * $lista['QTD']);
+            $sub = ($lista['VALOR_US'] * $lista['QTD']);
             $this->valorTotal += $sub;
 
             $peso = $lista['PESO'] * $lista['QTD'];
@@ -17,8 +17,8 @@ class Carrinho {
             $this->itens[$i] = array(
                 'prod_id' => $lista['ID'],
                 'prod_nome' => $lista['NOME'],
-                'prod_valor' => ($lista['VALOR']), // 1.000,99
-                'prod_valor_us' => $lista['VALOR'], // 1.000,99
+                'prod_valor' => $lista['VALOR'], // 1.000,99
+                'prod_valor_us' => $lista['VALOR_US'], // 1.000,99
                 'prod_peso' => $lista['PESO'],
                 'prod_qtd' => $lista['QTD'],
                 'prod_img' => $lista['IMG'],

@@ -20,8 +20,15 @@ if (!login::logado()) {
         }
 
         if (!isset($_SESSION['PED']['refer'])) {
-            $_SESSION['PED']['refer'] = $referCodPedido;
+            $_SESSION['PED']['refer'] = $referCodPedido / 2;
         }
+
+        $pedido = new Pedidos();
+
+        $cliente = $_SESSION['CLI']['cli_id'];
+        $cod = $_SESSION['PED']['pedido'];
+        $refer = $_SESSION['PED']['refer'];
+        $frete = $_SESSION['PED']['frete'];
 
         $smarty->assign('PRODS', $carrinho->getCarrinho());
         $smarty->assign('GET_TEMPLATE', Rotas::get_template());
@@ -30,16 +37,13 @@ if (!login::logado()) {
         $smarty->assign('SITE_NOME', Config::SITE_NOME);
         $smarty->assign('SITE_HOME', Rotas::get_home());
         $smarty->assign('PAG_CONTA', Rotas::pag_conta());
-
-        $pedido = new Pedidos();
-
+        $smarty->assign('PAG_RETORNO', Rotas::pag_pedido_retorno());
+        $smarty->assign('PAG_RETORNO_ERRO', Rotas::pag_pedido_retorno_erro());
+        $smarty->assign('REFER', $refer);
         $smarty->assign('FRETE', Sistema::MoedaBR($_SESSION['PED']['frete']));
         $smarty->assign('TOTAL_COM_FRETE', Sistema::MoedaBR($_SESSION['PED']['total_com_frete']));
 
-        $cliente = $_SESSION['CLI']['cli_id'];
-        $cod = $_SESSION['PED']['pedido'];
-        $refer = $_SESSION['PED']['refer'];
-        $frete = $_SESSION['PED']['frete'];
+
 
         $email = new EnviarEmail();
 
@@ -47,9 +51,17 @@ if (!login::logado()) {
         $assunto = 'Pedido de JVTecnologia - ' . Sistema::DataAtualBR();
         $msg = $smarty->fetch('email_compra.tpl');
 
-        $email->Enviar($assunto, $msg, $destinatarios);
+//        $email->Enviar($assunto, $msg, $destinatarios);
 
         if ($pedido->pedidoGravar($cliente, $cod, $refer, $frete)) {
+
+            $pag = new PagamentoPS();
+
+            $pag->Pagamento($_SESSION['CLI'], $_SESSION['PED'], $carrinho->getCarrinho());
+
+            $smarty->assign('PS_URL', $pag->psURL);
+            $smarty->assign('PS_COD', $pag->psCod);
+            $smarty->assign('PS_SCRIPT', $pag->psURL_Script);
             $pedido->limparSessao();
         }
 

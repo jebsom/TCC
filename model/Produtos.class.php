@@ -188,6 +188,19 @@ Class Produtos extends Conex {
         }
     }
 
+    function getProdutosNome($nome) {
+
+        $query = "SELECT * FROM {$this->prefix}produtos p INNER JOIN {$this->prefix}categorias c";
+        $query .= " ON p.prod_categoria = c.cat_id";
+        $query .= " WHERE  prod_nome LIKE '%$nome%'";
+        $query .= $this->paginacaoLinks("prod_id", $this->prefix . "produtos WHERE  prod_nome LIKE '%$nome%'");
+
+        $params = array(':nome' => $nome);
+
+        $this->ExecuteSQL($query, $params);
+        $this->getLista();
+    }
+
     function getProd_nome() {
         return $this->prod_nome;
     }

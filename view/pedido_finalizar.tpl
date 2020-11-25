@@ -4,34 +4,25 @@
 <section class="row ">
     <center>
         <table class="table table-bordered table-striped" style="width: 95%">
-
             <tr class="text-danger bg-danger">
                 <td></td> 
                 <td>Produto</td> 
                 <td>Valor R$</td> 
                 <td>X</td> 
                 <td>Sub Total R$</td> 
-
-
             </tr>
-
             {foreach from=$PRODS item=$p}
                 <tr>
-
                     <td> <img src="{$p.prod_img}" alt="{$p.prod_nome}"> </td>
                     <td> {$p.prod_nome} </td>
                     <td> {$p.prod_valor} </td>
                     <td> {$p.prod_qtd} </td>
                     <td> {$p.prod_subTotal} </td>
-
                 </tr>
             {/foreach}
-
         </table>
         <div class="alert alert-success">Pedido finalizado com sucesso!</div>
-
     </center>
-
 </section>
 
 <section class="row" id="total">
@@ -58,10 +49,23 @@
     </div>
     <!-- botao de pagamento  -->
     <div class="col-md-4">
-
-        <img src="{$GET_TEMPLATE}/images/logo-pagseguro.png"  alt=""> 
-        <script type="text/javascript" src="{$PS_SCRIPT}"></script>
-
+        <center>
+            <button class="btn btn-success btn-lg block" onclick="PagSeguroLightbox({
+                        code: '{$PS_COD}'
+                    }, {
+                        success: function (transactionCode) {
+                            alert('Transação efetiva - ' + transactionCode);
+                            window.location = '{$PAG_RETORNO}/{$REFER}';
+                                        },
+                                        abort: function () {
+                                            alert('Erro no processo de pagamento');
+                                            window.location = '{$PAG_RETORNO_ERRO}/{$REFER}';
+                                                        }
+                                                    });"> Pague com PagSeguro</button>
+            <script type="text/javascript" src="{$PS_SCRIPT}"></script>
+            <img src="{$GET_TEMPLATE}/images/logo-pagseguro.png"  alt=""> 
+            <script type="text/javascript" src="{$PS_SCRIPT}"></script>
+        </center>
     </div>
     <div class="col-md-4">
 
