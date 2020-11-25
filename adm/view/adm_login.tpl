@@ -36,6 +36,8 @@
 
                     <br>
                     <center><button class="btn btn-warning" data-toggle="collapse" data-target="#recovery"> Esqueci a senha </button></center>
+                    <br>
+                    <center><a href="{$HOME}"class="btn btn-info" > Voltar a Loja </a></center>
 
                     <div class="alert alert-danger collapse" id="recovery">
                         <form name="recovery" method="post" action="">

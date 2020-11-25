@@ -43,5 +43,6 @@ if (isset($_POST['recovery'])) {
     }
 }
 
+$smarty->assign('HOME', Rotas::get_home());
 $smarty->assign('GET_TEMPLATE', Rotas::get_template());
 $smarty->display('adm_login.tpl');

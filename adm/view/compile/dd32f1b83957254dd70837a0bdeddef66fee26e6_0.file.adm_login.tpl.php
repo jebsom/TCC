@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.36, created on 2020-11-24 11:59:31
+/* Smarty version 3.1.36, created on 2020-11-25 14:46:37
   from 'C:\xampp\htdocs\TCC\adm\view\adm_login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.36',
-  'unifunc' => 'content_5fbd1fd3cb0916_27609210',
+  'unifunc' => 'content_5fbe987df396c2_76788649',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'dd32f1b83957254dd70837a0bdeddef66fee26e6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TCC\\adm\\view\\adm_login.tpl',
-      1 => 1606226868,
+      1 => 1606326391,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fbd1fd3cb0916_27609210 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fbe987df396c2_76788649 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 
 <html>
@@ -71,6 +71,9 @@ function content_5fbd1fd3cb0916_27609210 (Smarty_Internal_Template $_smarty_tpl)
 
                     <br>
                     <center><button class="btn btn-warning" data-toggle="collapse" data-target="#recovery"> Esqueci a senha </button></center>
+                    <br>
+                    <center><a href="<?php echo $_smarty_tpl->tpl_vars['HOME']->value;?>
+"class="btn btn-info" > Voltar a Loja </a></center>
 
                     <div class="alert alert-danger collapse" id="recovery">
                         <form name="recovery" method="post" action="">
